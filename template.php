@@ -99,3 +99,5 @@ function sanitise_data($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
+echo phpinfo();
