@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
-            <img src="images/Logo2.jpg" alt="" width="100" height="100">
+            <img src="images/logo.jpg" alt="" width="100" height="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,8 +22,6 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="moduleList.php">Modules</a></li>
-                <li class="nav-item"><a class="nav-link" href="leaderboard.php">Leaderboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 
                 <?php
@@ -42,11 +40,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="userSearch.php">User Search</a>
-
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="moduleRegister.php">Add New Module</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="flagMaker.php">Add New Flag</a>
                         <?php
                     }
                     ?>
@@ -56,10 +49,10 @@
                     <?php
                 } else {
                     echo '
-                    <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userRegister.php">Register</a></li>
                     ';
                     echo '
-                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userLogin.php">Login</a></li>
                     ';
 
 
@@ -70,7 +63,7 @@
         </div>
         <?php
         if (isset($_SESSION["username"])) {
-            echo "<div class='alert alert-success d-flex'><span>Welcome, " . $_SESSION["username"] . "<br><a href='logout.php'>Logout</a></span></div>";
+            echo "<div class='alert alert-success d-flex'><span>Welcome, " . $_SESSION["username"] . "<br><a href='userLogout.php'>Logout</a></span></div>";
         }
         ?>
     </div>
@@ -100,4 +93,32 @@ function sanitise_data($data)
     return $data;
 }
 
-echo phpinfo();
+function authorisedAccess($unauthorisedUsers, $users, $admin)
+{
+    // Unauthenticated User
+    if (!isset($_SESSION["username"])) { // user not logged in
+        if ($unauthorisedUsers == false) {
+            $_SESSION['flash_message'] = "<div class='bg-danger'>Access Denied</div>";
+            return false;
+        }
+    } else {
+
+        // Regular User
+        if ($_SESSION["access_level"] == 1) {
+            if ($users == false) {
+                $_SESSION['flash_message'] = "<div class='bg-danger'>Access Denied</div>";
+                return false;
+            }
+        }
+
+        // Administrators
+        if ($_SESSION["access_level"] == 2) {
+            if ($admin == false) {
+                return false;
+            }
+        }
+    }
+
+    // otherwise, let them through
+    return true;
+}
