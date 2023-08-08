@@ -28,7 +28,7 @@
                 $accessLevel = 2;
                 if (isset($_SESSION["username"])) {
                     echo '
-                    <li class="nav-item"><a class="nav-link" href="flagClaimer.php">Flag Claimer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fakelink.php">Make Post</a></li>
                     ';
                     if ($_SESSION["access_level"] == $accessLevel) {
 
