@@ -93,6 +93,8 @@ function sanitise_data($data)
     return $data;
 }
 
+echo phpinfo();
+
 function authorisedAccess($unauthorisedUsers, $users, $admin)
 {
     // Unauthenticated User
