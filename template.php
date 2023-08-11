@@ -117,6 +117,7 @@ function sanitise_data($data)
 }
 echo phpinfo();
 
+
 function authorisedAccess($unauthorisedUsers, $users, $admin)
 {
     // Unauthenticated User
