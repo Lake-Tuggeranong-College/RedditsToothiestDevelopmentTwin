@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
-            <img src="images/logo.jpg" alt="" width="100" height="100">
+            <img src="images/R2D2Globe.png" alt="" width="100" height="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,6 +115,7 @@ function sanitise_data($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+echo phpinfo();
 
 
 function authorisedAccess($unauthorisedUsers, $users, $admin)
