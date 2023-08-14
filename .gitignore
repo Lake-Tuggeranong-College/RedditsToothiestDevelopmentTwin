@@ -7,3 +7,7 @@
 /.idea/dataSources.xml
 /.idea/sqldialects.xml
 /.idea/
+
+# MacOS files
+**/.DS_Store
+.DS_Store
