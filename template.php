@@ -116,7 +116,6 @@ function sanitise_data($data)
     return $data;
 }
 
-
 function authorisedAccess($unauthorisedUsers, $users, $admin)
 {
     // Unauthenticated User
