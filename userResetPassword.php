@@ -4,7 +4,11 @@
 if (!authorisedAccess(true, true, true)) {
     header("Location:index.php");
 }
-
+if (isset($_GET["UserID"])) {
+    $user_id = $_GET["UserID"];
+} else {
+    $userid = $_SESSION["user_id"] ;
+}
 ?>
 
 <title>Register Page</title>
@@ -34,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = sanitise_data($_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $accessLevel = 1;
-    $userid = $_SESSION["user_id"] ;
     //$hashed_password;
 
 
