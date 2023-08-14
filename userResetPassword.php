@@ -5,7 +5,7 @@ if (!authorisedAccess(true, true, true)) {
     header("Location:index.php");
 }
 if (isset($_GET["UserID"])) {
-    $user_id = $_GET["UserID"];
+    $userid = $_GET["UserID"];
 } else {
     $userid = $_SESSION["user_id"] ;
 }
@@ -13,7 +13,7 @@ if (isset($_GET["UserID"])) {
 
 <title>Register Page</title>
 
-<h1 class='text-primary'>Reset password</h1>
+<h1 class='text-primary'>Reset Password <?=$userid?></h1>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
