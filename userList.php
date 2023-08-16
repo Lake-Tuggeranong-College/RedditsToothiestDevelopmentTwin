@@ -30,7 +30,7 @@ if ($_SESSION['access_level'] == 3) {
                     <?php echo $userData["enabled"]; ?>
                 </div>
                 <div class="col-md-2">
-                    <a href="userResetPassword.php?UserID=<?php echo $userData["UserID"]; ?>">Reset Password</a>
+                    <a href="userProfile.php?UserID=<?php echo $userData[">Reset Password</a>
                 </div>
             </div>
             <?php

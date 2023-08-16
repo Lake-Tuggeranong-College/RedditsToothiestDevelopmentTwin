@@ -19,7 +19,7 @@ if (isset($_GET["UserID"])) {
 <title>Register Page</title>
 
 <h1 class='text-primary'>Reset Password <?=$userid?></h1>
-<form action="userResetPassword.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
+<form action="userProfile.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
             <!--Customer Details-->
