@@ -21,15 +21,15 @@ include 'template.php';
 </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//    $ID = sanitise_data($_POST['ID']);
-    $BodyText = sanitise_data($_POST['Description']);
-//    $Author = sanitise_data($_POST['Author']);
-    $Title = sanitise_data($_POST['Title']);
-//    $DataTime = sanitise_data($_POST['DataTime']);
-//    $DownVotes = sanitise_data($_POST['DownVotes']);
-//    $UpVotes = sanitise_data($_POST['UpVotes']);
-//    $Enabled = sanitise_data($_POST['Enabled']);
-//    $location = sanitise_data($_POST['location']);
+//    $ID = $_SESSION['ID'];
+    $BodyText = 'h';
+    $Author = 'h';
+    $Title = 'h';
+    $DataTime = 'h';
+    $DownVotes = 'h';
+    $UpVotes = 'h';
+    $Enabled = 'h';
+    $location = 'h';
     //$username;
     //$hashed_password;
 
@@ -41,20 +41,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    if ($numberOfPosts > 0) {
 //        echo "No Posts";
 //    } else {
-        $sql = "INSERT INTO Posts (ID, BodyText, Author, Title, DataTime, DownVotes, UpVotes, Enabled, location) VALUES (:ID, :BodyText, :Author, :Title, :DataTime, :DownVotes, :UpVotes, :Enabled, :location)";
+        $sql = "INSERT INTO Posts (BodyText, Author, Title, DataTime, DownVotes, UpVotes, Enabled, location) VALUES ( :BodyText, :Author, :Title, :DataTime, :DownVotes, :UpVotes, :Enabled, :location)";
         $stmt = $conn->prepare($sql);
 //        $stmt->bindValue(':ID', $ID);
         $stmt->bindValue(':BodyText', $BodyText);
-//        $stmt->bindValue(':Author', $Author);
+        $stmt->bindValue(':Author', $Author);
         $stmt->bindValue(':Title', $Title);
-//        $stmt->bindValue(':DataTime', $DataTime);
-//        $stmt->bindValue(':DownVotes', $DownVotes);
-//        $stmt->bindValue(':UpVotes', $UpVotes);
-//        $stmt->bindValue(':Enabled', $Enabled);
-//        $stmt->bindValue(':location', $location);
-        $stmt->execute();
+        $stmt->bindValue(':DataTime', $DataTime);
+        $stmt->bindValue(':DownVotes', $DownVotes);
+        $stmt->bindValue(':UpVotes', $UpVotes);
+        $stmt->bindValue(':Enabled', $Enabled);
+        $stmt->bindValue(':location', $location);
+        $stmt->exec();
         $_SESSION["flash_message"] = "Post Create!!";
-        header("Location:index.php");
+//        header("Location:index.php");
 
 //    }
 }
