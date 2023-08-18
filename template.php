@@ -22,14 +22,13 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
-                <select name="language" id="language">
-                    <option value="javascript">action 1</option>
-                    <option value="python">action 2</option>
-                    <option value="c++" disabled>action 3</option>
-                    <option value="java" selected>action 4</option>
-                </select>
-                </div>
+<!--                <select name="language" id="language">-->
+<!--                    <option value="Admin Features" selected>Admin Features</option>-->
+<!--                    <option value="action 1">action 1</option>-->
+<!--                    <option value="action 2">action 2</option>-->
+<!--                    <option value="action 3" disabled>action 3</option>-->
+<!--                    <option value="action 4" >action 4</option>-->
+<!--                </select>-->
 
                 <?php
                 $accessLevel = 2;
