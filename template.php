@@ -31,7 +31,7 @@
 <!--                </select>-->
 
                 <?php
-                $accessLevel = 2;
+                $accessLevel = 3;
                 if (isset($_SESSION["username"])) {
                     echo '
                     <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
@@ -45,7 +45,7 @@
                             Administrator Functions
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="userSearch.php">User Search</a>
+                        <a class="dropdown-item" href="userList.php">User List</a>
                         <?php
                     }
                     ?>
