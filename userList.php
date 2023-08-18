@@ -9,7 +9,7 @@
 $userList = $conn->query("SELECT UserID, Username, enabled FROM Users");
 ?>
 <?php
-// Check to see if User is Administrator (level 1)
+// Check to see if User is Administrator (level 3)
 // If they are, allow functionality, otherwise redirect them back to the front page.
 if ($_SESSION['access_level'] == 3) {
     ?>
@@ -30,7 +30,7 @@ if ($_SESSION['access_level'] == 3) {
                     <?php echo $userData["enabled"]; ?>
                 </div>
                 <div class="col-md-2">
-                    <a href="userProfile.php?UserID=<?php echo $userData[">Reset Password</a>
+                    <a href="userProfile.php?UserID=<?php echo $userData["UserID"]?>">Reset Password</a>
                 </div>
             </div>
             <?php
