@@ -1,6 +1,5 @@
 <?php require_once 'config.php'; ?>
 <html>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,13 +23,19 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="Test%20post%20upload.php">Upload Post</a></li>
+                <select name="language" id="language">
+                    <option value="javascript">action 1</option>
+                    <option value="python">action 2</option>
+                    <option value="c++" disabled>action 3</option>
+                    <option value="java" selected>action 4</option>
+                </select>
                 </div>
 
                 <?php
                 $accessLevel = 2;
                 if (isset($_SESSION["username"])) {
                     echo '
-                    <li class="nav-item"><a class="nav-link" href="fakelink.php">Make Post</a></li>
+                    <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
                     ';
                     if ($_SESSION["access_level"] == $accessLevel) {
 
@@ -74,21 +79,21 @@
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
 15%, 70%, 15% or 10%, 70%, 20%
 So, 1.5, 9, 1.5 or 1, 9, 2-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-1 bg-light p-3 border">
-            Communities n stuff
-            <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
-        </div>
-        <!-- Currently, these sit in the centre rather than touching the edges as I would have liked -->
-        <div class="col-9 bg-light p-3 border">
-            The feed
-        </div>
-        <div class="col-2 bg-light p-3 border">
-            User stuff
-        </div>
-    </div>
-</div>
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div class="col-1 bg-light p-3 border">-->
+<!--            Communities n stuff-->
+<!--            <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
+<!--        </div>-->
+<!--        <!-- Currently, these sit in the centre rather than touching the edges as I would have liked -->
+<!--        <div class="col-9 bg-light p-3 border">-->
+<!--            The feed-->
+<!--        </div>-->
+<!--        <div class="col-2 bg-light p-3 border">-->
+<!--            User stuff-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 
