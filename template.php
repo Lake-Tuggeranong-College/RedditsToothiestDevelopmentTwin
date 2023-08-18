@@ -23,11 +23,8 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 <!--                <select name="language" id="language">-->
-<!--                    <option value="Admin Features" selected>Admin Features</option>-->
-<!--                    <option value="action 1">action 1</option>-->
-<!--                    <option value="action 2">action 2</option>-->
-<!--                    <option value="action 3" disabled>action 3</option>-->
-<!--                    <option value="action 4" >action 4</option>-->
+<!--                    <option value="Admin Features" selected>Light Mode</option>-->
+<!--                    <option value="action 1">Dark Mode</option>-->
 <!--                </select>-->
 
                 <?php
