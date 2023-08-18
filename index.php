@@ -2,6 +2,7 @@
 <?php include "template.php";
 /**  @var $conn */
 ?>
+<link rel="stylesheet" href="style.css">
 <body>
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
 15%, 70%, 15% or 10%, 70%, 20%
@@ -40,13 +41,39 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <!-- If someone could find a way to have separation between the columns, that would be great -->
         <!-- Currently, these sit in the centre rather than touching the edges as I would have liked -->
         <div class="col-9 bg-light p-3 border">
-            The feed
-            <div class="col border">
-                You may potentially want to format posts in columns like this
-            </div>
-            <div class="col border">
-                In order to separate posts
-            </div>
+            <!--Pulls the details from the Posts table-->
+<?php
+$postDetails = $conn->query( "SELECT BodyText, Title FROM Posts");
+?>
+
+
+<?php
+while ($postData = $postDetails->fetch()){
+?>
+<!--this will be the border of the hole post-->
+<div class="POST">
+
+<!--    this is the div that will display the title and other things displayed in the head note-->
+    <div class="POSTTITLE">
+<?php echo '<h1>' . $postData[1] . '</h1>'; ?>
+    </div>
+    <hr>
+<!--    this is the div that will display the contents of the body of the post-->
+    <div class="POSTBODY">
+<?php echo $postData[0]; ?>
+    </div>
+<!--    this it the div that will display the contents of the fotter of the post eg. the up-votes and down-votes-->
+    <div>
+
+    </div>
+</div>
+
+    </body>
+
+<?php
+}
+?>
+
         </div>
         <div class="col">
             <div class="col bg-light p-2 border">
