@@ -1,11 +1,16 @@
 <?php include "template.php";
 /** @var $conn */
 
-if (!authorisedAccess(true, true, true)) {
+if (!authorisedAccess(false, true, true)) {
     header("Location:index.php");
 }
 if (isset($_GET["UserID"])) {
-    $userid = $_GET["UserID"];
+    if ($_SESSION['access_level'] == 3) {
+        $userid = $_GET["UserID"];
+    } else {
+        $_SESSION["flash_message"] = "Access denied!";
+        $userid = $_SESSION["user_id"] ;
+    }
 } else {
     $userid = $_SESSION["user_id"] ;
 }
@@ -14,7 +19,7 @@ if (isset($_GET["UserID"])) {
 <title>Register Page</title>
 
 <h1 class='text-primary'>Reset Password <?=$userid?></h1>
-<form action="userResetPassword.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
+<form action="userProfile.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
             <!--Customer Details-->
