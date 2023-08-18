@@ -1,6 +1,9 @@
 <?php
 include 'template.php';
 /** @var $conn */
+if (!authorisedAccess(false, true, true)) {
+    header("Location:index.php");
+}
 ?>
 <title>Post Creation</title>
 <div>
@@ -35,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$hashed_password;
 
 // check username in database
-    $query = $conn->query("SELECT COUNT(*) FROM Users WHERE Username='$userID'");
-    $data = $query->fetch();
-    $numberOfUsers = (int)$data[0];
+//    $query = $conn->query("SELECT COUNT(*) FROM Users WHERE Username='$userID'");
+//    $data = $query->fetch();
+//    $numberOfUsers = (int)$data[0];
 
 //    if ($numberOfPosts > 0) {
 //        echo "No Posts";
