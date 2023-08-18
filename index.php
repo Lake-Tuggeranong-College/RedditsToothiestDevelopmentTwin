@@ -2,7 +2,7 @@
 <?php include "template.php";
 /**  @var $conn */
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <body>
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
 15%, 70%, 15% or 10%, 70%, 20%
