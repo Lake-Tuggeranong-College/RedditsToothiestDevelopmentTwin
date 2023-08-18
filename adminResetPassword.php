@@ -1,7 +1,7 @@
 <?php include "template.php";
 /** @var $conn */
 
-if (!authorisedAccess(false, true, true)) {
+if (!authorisedAccess(false, false, true)) {
     header("Location:index.php");
 }
 if (isset($_GET["UserID"])) {
