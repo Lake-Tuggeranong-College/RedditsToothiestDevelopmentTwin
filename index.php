@@ -43,7 +43,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col-9 bg-light p-3 border">
             <!--Pulls the details from the Posts table-->
 <?php
-$postDetails = $conn->query( "SELECT BodyText, Title FROM Posts");
+$postDetails = $conn->query( "SELECT BodyText, Title FROM Posts ORDER BY ID DESC;");
 ?>
 
 

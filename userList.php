@@ -2,7 +2,7 @@
 /**  @var $conn */
 ?>
     <!--This script will list all of the products to the admins and show edit and remove buttons to access productEdit.php and productRemove.php.-->
-    <title>Product List</title>
+    <title>User List</title>
 
     <h1 class='text-primary'>User List</h1>
 <?php
