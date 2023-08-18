@@ -14,7 +14,15 @@ if (isset($_GET["UserID"])) {
 } else {
     $userid = $_SESSION["user_id"] ;
 }
+$query = $conn->query("SELECT * FROM Users WHERE UserID='$userid'");
+$userData = $query->fetch();
+$userName = $userData["Username"];
+$hashedPassword = $userData["HashedPassword"];
+$userAccessLevel = $userData["AccessLevel"];
+$userEnabled = $userData["enabled"];
+
 ?>
+
 
 <title>Register Page</title>
 
@@ -24,13 +32,33 @@ if (isset($_GET["UserID"])) {
         <div class="row">
             <!--Customer Details-->
 
+
+            <p>Please enter new username:</p>
+
+            <p>Username<input type="text" name="Newusername" class="form-control" required="required"></p>
+
+        </div>
             <div class="col-md-12">
-                <h2>Account Details</h2>
+
                 <p>Please enter new password:</p>
 
                 <p>Password<input type="password" name="password" class="form-control" required="required"></p>
 
             </div>
+       <div class="col-md-12">
+
+        <p>Please enter new access level:</p>
+
+        <p>Access Level<input type="text" name="password" class="form-control" required="required"></p>
+
+    </div>
+    <div class="col-md-12">
+
+    <p>Please enter enabled:</p>
+
+    <p>Enabled<input type="text" name="password" class="form-control" required="required"></p>
+
+    </div>
         </div>
     </div>
     <input type="submit" name="formSubmit" value="Submit">
