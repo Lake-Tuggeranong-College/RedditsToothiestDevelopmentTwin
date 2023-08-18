@@ -41,6 +41,12 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <!-- Currently, these sit in the centre rather than touching the edges as I would have liked -->
         <div class="col-9 bg-light p-3 border">
             The feed
+            <div class="col border">
+                You may potentially want to format posts in columns like this
+            </div>
+            <div class="col border">
+                In order to separate posts
+            </div>
         </div>
         <div class="col-2 bg-light p-3 border">
             User stuff
