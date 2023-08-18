@@ -48,8 +48,25 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                 In order to separate posts
             </div>
         </div>
-        <div class="col-2 bg-light p-3 border">
-            User stuff
+        <div class="col">
+            <div class="col bg-light p-2 border">
+                <p><u><b><center>Following</center></b></u></p>
+                <ul>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                    <li>User - Online Status</li>
+                </ul>
+                <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
+            </div>
+            <div class="col bg-light p-3 border">
+                <p><u><b><center>Private Messaging</center></b></u></p>
+                <p>This is where the private messaging code would go, if we had any.</p>
+            </div>
         </div>
     </div>
 </div>
