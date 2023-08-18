@@ -15,7 +15,7 @@ if (isset($_GET["UserID"])) {
     $userid = $_SESSION["user_id"] ;
 }
 $query = $conn->query("SELECT * FROM Users WHERE UserID='$userid'");
-$userData = $query->fetchArray();
+$userData = $query->fetch();
 $userName = $userData["Username"];
 $hashedPassword = $userData["HashedPassword"];
 $userAccessLevel = $userData["AccessLevel"];
@@ -31,7 +31,7 @@ $userEnabled = $userData["enabled"];
     <div class="container-fluid">
         <div class="row">
             <!--Customer Details-->
-            div class="col-md-12">
+
 
             <p>Please enter new username:</p>
 
@@ -45,7 +45,7 @@ $userEnabled = $userData["enabled"];
                 <p>Password<input type="password" name="password" class="form-control" required="required"></p>
 
             </div>
-       < div class="col-md-12">
+       <div class="col-md-12">
 
         <p>Please enter new access level:</p>
 
