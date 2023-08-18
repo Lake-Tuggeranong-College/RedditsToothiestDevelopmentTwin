@@ -71,7 +71,7 @@ If it is causing issues within the site, please let me know or delete it from yo
         ?>
     </div>
 </nav>
-
+</body>
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
 15%, 70%, 15% or 10%, 70%, 20%
 So, 1.5, 9, 1.5 or 1, 9, 2-->
