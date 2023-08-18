@@ -1,6 +1,5 @@
 <?php require_once 'config.php'; ?>
 <html>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,7 +22,13 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="postUpload.php">Upload Post</a></li>
+                <li class="nav-item"><a class="nav-link" href="Test%20post%20upload.php">Upload Post</a></li>
+                <select name="language" id="language">
+                    <option value="javascript">action 1</option>
+                    <option value="python">action 2</option>
+                    <option value="c++" disabled>action 3</option>
+                    <option value="java" selected>action 4</option>
+                </select>
                 </div>
 
                 <?php
