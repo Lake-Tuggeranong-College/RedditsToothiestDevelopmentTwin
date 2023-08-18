@@ -2,7 +2,7 @@
 If you are not testing around the UI, you can safely ignore this file.
 If it is causing issues within the site, please let me know or delete it from your repository.-->
 <?php require_once 'config.php'; ?>
-    <html>
+
 
     <head>
         <!-- Required meta tags -->
