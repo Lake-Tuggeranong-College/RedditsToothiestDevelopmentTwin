@@ -7,13 +7,16 @@
 
 <!--Pulls the details from the Posts table-->
 <?php
-$postDetails = $conn->query( "SELECT BodyText, Title FROM Posts");
+$postDetails = $conn->query( "SELECT BodyText, Title, Enabled FROM Posts");
 ?>
 
 
 <?php
 while ($postData = $postDetails->fetch()){
+
+    if($postData[2]== 1){
 ?>
+
 <!--this will be the border of the hole post-->
 <div class="POST">
 
@@ -35,5 +38,6 @@ while ($postData = $postDetails->fetch()){
     </body>
 
 <?php
+    }
 }
 ?>
