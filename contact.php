@@ -1,4 +1,4 @@
-<?php include "template.php"
+<?php include "template.php";
 /** @var $conn */
 ?>
     <!--Contact.php-->
@@ -11,20 +11,20 @@
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="mb-3">
             <label for="contactUsername" class="form-label">Username</label>
-            <input type="email" class="form-control" id="contactUsername" name="contactUsername"
+            <input type="text" class="form-control" id="contactUsername" name="contactUsername"
                    readonly value="<?php echo $_SESSION["username"] ?>">
         </div>
         <div class="mb-3">
             <label for="contactMessage" class="form-label">Message</label>
             <textarea class="form-control" id="contactMessage" name="contactMessage" rows="4"></textarea>
         </div>
-        <button type="submit" name="formSubmit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="formSubmit" class="btn btn-primary">Send</button>
     </form>
 </div>
 
 <?php
 if (isset($_POST['formSubmit'])){
-    $contactUsername= sanitise_data($_POST['contactUsername']);
+    $contactUsername = $_SESSION["username"];
     $contactMessage = sanitise_data($_POST['contactMessage']);
 
     $formError = false;
