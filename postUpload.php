@@ -36,15 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location = 'Working On';
     //$username;
     //$hashed_password;
+    if(strlen($BodyText) >= 1024) {
+        echo 'You cant have the Description bigger then 1024 charaters';
+    } else if(strlen($Title) >= 200) {
+        echo 'You cant have the Title bigger then 200 charaters';
+    } else if(strlen($BodyText) >= 1024 || strlen($Title) >= 200){
+        echo 'You cant have the Title bigger then 200 charaters and You cant have the Description bigger then 1024 charaters';
+    }else {
 
-// check username in database
-//    $query = $conn->query("SELECT COUNT(*) FROM Users WHERE Username='$userID'");
-//    $data = $query->fetch();
-//    $numberOfUsers = (int)$data[0];
-
-//    if ($numberOfPosts > 0) {
-//        echo "No Posts";
-//    } else {
     $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location)";
     $stmt = $conn->prepare($sql);
 //        $stmt->bindValue(':ID', $ID);
@@ -58,8 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindValue(':location', $location);
     $stmt->execute();
     $_SESSION["flash_message"] = "Post Create!!";
-//        header("Location:index.php");
 
-//    }
+    }
 }
 ?>
