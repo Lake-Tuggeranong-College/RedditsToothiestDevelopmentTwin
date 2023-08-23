@@ -1,8 +1,11 @@
 <?php include "template.php";
 /** @var $conn */
+if (!authorisedAccess(false, true, true)) {
+    header("Location:index.php");
+}
 ?>
     <!--Contact.php-->
-    <!--This script asks for the users email and asks them to write a message which will be saved sanitised and sent to the database.-->
+    <!--This script asks them to write a message which will be saved sanitised and sent to the database.-->
     <!--It also checks if the user hasn't inputted anything-->
     <body>
 <title>Contact Us</title>
@@ -30,7 +33,7 @@ if (isset($_POST['formSubmit'])){
     $formError = false;
     if (empty($_POST['contactUsername'])) {
         $formError = true;
-        echo "Enter an email address.\n";
+        echo "Username not logged in..\n";
     }
     if (empty($_POST['contactMessage'])) {
         $formError = true;

@@ -1,5 +1,8 @@
 <?php include "template.php";
 /**  @var $conn */
+if (!authorisedAccess(false, false, true)) {
+    header("Location:index.php");
+}
 ?>
     <!--This script will list all of the products to the admins and show edit and remove buttons to access productEdit.php and productRemove.php.-->
     <title>Contacted Messages</title>
@@ -28,6 +31,9 @@ if ($_SESSION['access_level'] == 3) {
                 </div>
                 <div class="col-md-2">
                     <?php echo $contactData["message"]; ?>
+                </div>
+                <div class="col-md-2">
+                    <a href="userProfile.php?UserID=<?php echo $userData["UserID"]?>">Delete Message</a>
                 </div>
             </div>
             <?php

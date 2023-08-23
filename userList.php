@@ -6,7 +6,7 @@
 
     <h1 class='text-primary'>User List</h1>
 <?php
-$userList = $conn->query("SELECT UserID, Username, enabled FROM Users");
+$userList = $conn->query("SELECT UserID, Username, enabled, AccessLevel FROM Users");
 ?>
 <?php
 // Check to see if User is Administrator (level 3)
@@ -28,6 +28,9 @@ if ($_SESSION['access_level'] == 3) {
                 </div>
                 <div class="col-md-2">
                     <?php echo $userData["enabled"]; ?>
+                </div>
+                <div class="col-md-2">
+                    <?php echo $userData["AccessLevel"]; ?>
                 </div>
                 <div class="col-md-2">
                     <a href="userProfile.php?UserID=<?php echo $userData["UserID"]?>">Reset Password</a>
