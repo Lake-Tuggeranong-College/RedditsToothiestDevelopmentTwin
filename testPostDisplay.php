@@ -2,7 +2,7 @@
 /**  @var $conn */
 ?>
     <title>Test Post</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <body>
 
 <!--Pulls the details from the Posts table-->
@@ -38,6 +38,9 @@ while ($postData = $postDetails->fetch()){
     </body>
 
 <?php
+    }
+    else{
+
     }
 }
 ?>
