@@ -2,7 +2,7 @@
 <?php include "template.php";
 /**  @var $conn */
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <body>
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
 15%, 70%, 15% or 10%, 70%, 20%
@@ -43,13 +43,17 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col-9 bg-light p-3 border">
             <!--Pulls the details from the Posts table-->
 <?php
-$postDetails = $conn->query( "SELECT BodyText, Title FROM Posts");
+$postDetails = $conn->query( "SELECT BodyText, Title, Enabled FROM Posts ORDER BY ID DESC;");
 ?>
+
 
 
 <?php
 while ($postData = $postDetails->fetch()){
+
+    if($postData[2]== 1){
 ?>
+
 <!--this will be the border of the hole post-->
 <div class="POST">
 
@@ -71,6 +75,8 @@ while ($postData = $postDetails->fetch()){
     </body>
 
 <?php
+}
+
 }
 ?>
 

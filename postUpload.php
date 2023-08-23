@@ -12,11 +12,11 @@ if (!authorisedAccess(false, true, true)) {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="mb-3">
                 <label for="Posts" class="form-label">Title</label>
-                <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Post">
+                <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Post" required="required">
             </div>
             <div class="mb-3">
                 <label for="Posts" class="form-label">Description</label>
-                <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
+                <textarea class="form-control" id="Description" name="Description" rows="3" required="required"></textarea>
             </div>
             <button type="submit" name="PostSubmit" class="btn btn-primary">Post</button>
         </form>
@@ -36,15 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location = 'Working On';
     //$username;
     //$hashed_password;
+    if(strlen($BodyText) >= 1024) {
+        echo 'You cant have the Description bigger then 1024 charaters';
+    } else if(strlen($Title) >= 200) {
+        echo 'You cant have the Title bigger then 200 charaters';
+    } else {
 
-// check username in database
-//    $query = $conn->query("SELECT COUNT(*) FROM Users WHERE Username='$userID'");
-//    $data = $query->fetch();
-//    $numberOfUsers = (int)$data[0];
-
-//    if ($numberOfPosts > 0) {
-//        echo "No Posts";
-//    } else {
     $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location)";
     $stmt = $conn->prepare($sql);
 //        $stmt->bindValue(':ID', $ID);
@@ -58,8 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindValue(':location', $location);
     $stmt->execute();
     $_SESSION["flash_message"] = "Post Create!!";
-//        header("Location:index.php");
 
-//    }
+    }
 }
 ?>

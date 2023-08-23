@@ -1,0 +1,29 @@
+.POST {
+    border-radius: 25px;
+    height: 500px;
+    background-color: #eff0f1;
+    margin: 25px;
+    border: #5c636a;
+    border-width: 5px;
+}
+
+.POSTTITLE {
+    padding-left: 15px;
+    padding-top: 10px;
+    height: 10%;
+}
+
+.POSTBODY {
+    padding-left: 15px;
+    height: 70%;
+}
+.POSTFOOTER{
+padding-left: 15px;
+}
+
+.COMMUNITY {
+    text-align: justify;
+}
+
+
+

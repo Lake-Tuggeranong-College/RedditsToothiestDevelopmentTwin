@@ -6,8 +6,7 @@ if (!authorisedAccess(true, false, false)) {
 }
 
 ?>
-Users
-<title>Cyber City - Login</title>
+<title>Login Page</title>
 
 <h1 class='text-primary'>Login</h1>
 
