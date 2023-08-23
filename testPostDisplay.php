@@ -8,7 +8,7 @@
     <!--Pulls the details from the Posts table-->
 <?php
 $modAccessLevel = 2;
-$postDetails = $conn->query("SELECT BodyText, Title, Enabled FROM Posts");
+$postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts");
 ?>
 
 
@@ -33,15 +33,15 @@ while ($postData = $postDetails->fetch()) {
 
             <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
             <div class="POSTFOOTER">
-               <?php if ($_SESSION["access_level"] == $modAccessLevel) {
-                   ?>
-                   <button>Disable</button>
-                   <?php
-               }
-               else{
-                   echo "123";
-               }
-               ?>
+                <?php if ($_SESSION["access_level"] == $modAccessLevel) {
+                    ?>
+                    <button type="submit" name="disablePost">Disable</button>
+                    <?php
+                    $newCondition = 0;
+                } else {
+                    echo "123";
+                }
+                ?>
             </div>
         </div>
 
@@ -51,5 +51,13 @@ while ($postData = $postDetails->fetch()) {
     } else {
 
     }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $sql = "UPDATE POST SET Enabled = :newCondition WHERE ID='$postData[3]'";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(':newCondition', $newCondition);
+    $stmt->execute();
+    $_SESSION["flash_message"] = "Post Disabled";
+    header("Location:index.php");
 }
 ?>
