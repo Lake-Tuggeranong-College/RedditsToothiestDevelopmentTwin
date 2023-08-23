@@ -12,11 +12,17 @@ if (!authorisedAccess(false, true, true)) {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="mb-3">
                 <label for="Posts" class="form-label">Title</label>
-                <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Post" required="required">
+                <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Post"
+                       required="required">
             </div>
             <div class="mb-3">
                 <label for="Posts" class="form-label">Description</label>
-                <textarea class="form-control" id="Description" name="Description" rows="3" required="required"></textarea>
+                <textarea class="form-control" id="Description" name="Description" rows="3"
+                          required="required"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="Posts" class="form-label">Image</label>
+                <input type="file" id="Image" name="Image">
             </div>
             <button type="submit" name="PostSubmit" class="btn btn-primary">Post</button>
         </form>
@@ -34,28 +40,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    $UpVotes = 'h';
 //    $Enabled = 'h';
     $location = 'Working On';
+    $file = $_FILES['Image'];
+    $fileName = $_FILES['Image']['name'];
+    $fileTmpName = $_FILES['Image']['tmp_name'];
+    $fileSize = $_FILES['Image']['size'];
+    $fileError = $_FILES['Image']['error'];
+    $fileType = $_FILES['Image']['type'];
+
+    // defining what type of file is allowed
+    // We separate the file, and obtain the file extension.
+    $fileExtension = explode('.', $fileName);
+    $fileActualExtension = strtolower(end($fileExtension));
+
+    $allowedExtensions = array('jpg', 'jpeg', 'png', 'pdf');
+
     //$username;
     //$hashed_password;
-    if(strlen($BodyText) >= 1024) {
+    if (strlen($BodyText) >= 1024) {
         echo 'You cant have the Description bigger then 1024 charaters';
-    } else if(strlen($Title) >= 200) {
+    } else if (strlen($Title) >= 200) {
         echo 'You cant have the Title bigger then 200 charaters';
     } else {
+        if (in_array($fileActualExtension, $allowedExtensions)) {
+            if ($fileError === 0) {
+                // File is smaller than arbitrary size
+                if ($fileSize < 10000000000) {
+                    //file name is now a unique ID based on time with IMG- preceeding it, followed by the file type.
+                    $fileNameNew = uniqid('IMG-', True) . "." . $fileActualExtension;
+                    //upload location
+                    $fileDestination = 'images/productImages/' . $fileNameNew;
+                    // Upload file
+                    move_uploaded_file($fileTmpName, $fileDestination);
 
-    $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location)";
-    $stmt = $conn->prepare($sql);
-//        $stmt->bindValue(':ID', $ID);
-    $stmt->bindValue(':BodyText', $BodyText);
-    $stmt->bindValue(':UserID', $userID);
-    $stmt->bindValue(':Title', $Title);
-    $stmt->bindValue(':DateTime', $DateTime);
-//    $stmt->bindValue(':DownVotes', $DownVotes);
-//    $stmt->bindValue(':UpVotes', $UpVotes);
-//    $stmt->bindValue(':Enabled', $Enabled);
-    $stmt->bindValue(':location', $location);
-    $stmt->execute();
-    $_SESSION["flash_message"] = "Post Create!!";
-
+                    $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindValue(':BodyText', $BodyText);
+                    $stmt->bindValue(':UserID', $userID);
+                    $stmt->bindValue(':Title', $Title);
+                    $stmt->bindValue(':DateTime', $DateTime);
+                    $stmt->bindValue(':Image', $fileNameNew);
+                    $stmt->bindValue(':location', $location);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Create!!";
+                }
+            }
+        }
     }
+
 }
 ?>
