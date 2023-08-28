@@ -9,7 +9,7 @@ if (isset($_GET["disableID"])) {
         header("Location:index.php");
     }
     echo "DisableID ID found: $disableID";
-    $stmt = $conn->prepare("UPDATE users SET Enabled = :disable WHERE UserID = :disableID");
+    $stmt = $conn->prepare("UPDATE Users SET Enabled = :disable WHERE UserID = :disableID");
     $stmt->bindParam(":disable", $disable);
     $stmt->bindParam(":disableID", $disableID);
     $disable = 0;
@@ -23,7 +23,7 @@ if (isset($_GET["enableID"])) {
         header("Location:index.php");
     }
     echo "EnableID ID found: $enableID";
-    $stmt = $conn->prepare("UPDATE users SET Enabled = :enable WHERE UserID = :enableID");
+    $stmt = $conn->prepare("UPDATE Users SET Enabled = :enable WHERE UserID = :enableID");
     $stmt->bindParam(":enable", $enable);
     $stmt->bindParam(":enableID", $enableID);
     $enable = 1;
