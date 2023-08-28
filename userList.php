@@ -50,14 +50,27 @@ if ($_SESSION['access_level'] == 3) {
                 <div class="col-md-1">
                     <?php echo $userData["UserID"]; ?>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <?php echo $userData["Username"]; ?>
                 </div>
                 <div class="col-md-1">
-                    <?php echo $userData["enabled"]; ?>
+                    <?php
+                    if($userData["enabled"]== 1)
+                        echo "Enabled";
+                    if($userData["enabled"]== 0)
+                        echo "Disabled";
+                    ?>
                 </div>
                 <div class="col-md-1">
-                    <?php echo $userData["AccessLevel"]; ?>
+                    <?php
+                    if($userData["AccessLevel"]== 3)
+                        echo "Administrator";
+                    if($userData["AccessLevel"]== 2)
+                        echo "Moderator";
+                    if($userData["AccessLevel"]== 1)
+                        echo "User";
+                    ?>
+
                 </div>
                 <div class="col-md-1">
                     <div class="btn-group dropright">
