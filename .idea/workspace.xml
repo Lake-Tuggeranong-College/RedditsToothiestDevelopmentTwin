@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="g">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/postUpload.php" afterDir="false" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/testPostDisplay.php" beforeDir="false" afterPath="$PROJECT_DIR$/testPostDisplay.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +21,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 4
-}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2TdLuzLMiwcDlxuSi8vWRACPCw6" />
-  <component name="ProjectLevelVcsManager">
-    <OptionsSetting value="false" id="Update" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,12 +37,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/bin/php&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nate_abraham/Documents/GitHub/NJPHP2023&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -78,7 +70,6 @@
       <workItem from="1691555580193" duration="933000" />
       <workItem from="1691972450975" duration="5237000" />
       <workItem from="1692330242483" duration="5530000" />
-      <workItem from="1692754229029" duration="1493000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -96,23 +87,7 @@
       <option name="project" value="LOCAL" />
       <updated>1692334591277</updated>
     </task>
-    <task id="LOCAL-00003" summary="made text requred">
-      <option name="closed" value="true" />
-      <created>1692753540450</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1692753540450</updated>
-    </task>
-    <task id="LOCAL-00004" summary="g">
-      <option name="closed" value="true" />
-      <created>1692753759712</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1692753759712</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,8 +96,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created a testPostDisplay.php page&#10;underway" />
     <MESSAGE value="feed and post working css added still in progress" />
-    <MESSAGE value="made text requred" />
-    <MESSAGE value="g" />
-    <option name="LAST_COMMIT_MESSAGE" value="g" />
+    <option name="LAST_COMMIT_MESSAGE" value="feed and post working css added still in progress" />
   </component>
 </project>
