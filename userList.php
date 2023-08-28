@@ -1,5 +1,6 @@
 <?php include "template.php";
 /**  @var $conn */
+isEnabled($conn);
 
 if (isset($_GET["disableID"])) {
     if ($_SESSION["access_level"] == 3) {

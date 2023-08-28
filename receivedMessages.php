@@ -1,6 +1,7 @@
 <?php include "template.php";
 /**  @var $conn */
 /**  @var $deletionid */
+isEnabled($conn);
 if (isset($_GET["deletionid"])) {
     if($_SESSION["access_level"] == 3){
         $deletionid = $_GET["deletionid"];

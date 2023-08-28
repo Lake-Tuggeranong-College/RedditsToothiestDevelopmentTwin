@@ -1,6 +1,7 @@
 <?php require_once 'config.php';
 ?>
 
+
 <html>
 <head>
     <!-- Required meta tags -->
@@ -151,4 +152,26 @@ function authorisedAccess($unauthorisedUsers, $users, $admin)
 
     // otherwise, let them through
     return true;
+}
+function isEnabled($conn)
+{
+    //Need to pass conn var otherwise fucntion will not work.
+    //Finds out the users Enabled value and checks to see if they are legal users.
+    /** @var $conn */
+    $useridenablecheck = $_SESSION["user_id"];
+    $isEnabledQuery = $conn->prepare("SELECT enabled FROM Users WHERE UserID = :user_id");
+    $isEnabledQuery->bindParam(":user_id", $useridenablecheck);
+    $isEnabledQuery->execute();
+    $isEnabled = $isEnabledQuery->fetchColumn();
+
+    if ($isEnabled === false) {
+        header("Location:userRegister.php");
+    } else {
+        if ($isEnabled == 1) {
+            //Do nothing if user is enabled.
+        } else {
+            header("Location:userLogout.php");
+        }
+    }
+
 }
