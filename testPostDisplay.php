@@ -35,13 +35,23 @@ while ($postData = $postDetails->fetch()) {
             <div class="POSTFOOTER">
                 <?php if ($_SESSION["access_level"] == $modAccessLevel) {
                     ?>
-                    <button type="submit" name="disablePost">Disable</button>
+                        <form method="post">
+                    <button type="submit" name=<?$postData[3]?>Disable</button>
+                        </form>
                     <?php
                     $newCondition = 0;
-                } else {
-                    echo "123";
-                }
-                ?>
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $postID =
+                $sql = "UPDATE POST SET Enabled = :newCondition WHERE ID = '$postData[3]'";
+                $stmt = $conn->prepare($sql);
+    $stmt->bindValue(':newCondition', $newCondition);
+                $stmt->execute();
+                $_SESSION["flash_message"] = "Post Disabled";
+                header("Location:index.php");
+
+            }
+
+            ?>
             </div>
         </div>
 
@@ -52,12 +62,6 @@ while ($postData = $postDetails->fetch()) {
 
     }
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = "UPDATE POST SET Enabled = :newCondition WHERE ID='$postData[3]'";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindValue(':newCondition', $newCondition);
-    $stmt->execute();
-    $_SESSION["flash_message"] = "Post Disabled";
-    header("Location:index.php");
 }
-?>
+
+    ?>
