@@ -22,7 +22,7 @@
     <!--this will be the border of the hole post-->
     <div class="POST">
 
-        <!--    this is the div that will display the title and other things displayed in the head note-->
+        <!--    this is the div that will display the title and other things displayed in the headnote-->
         <div class="POSTTITLE">
             <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
         </div>
