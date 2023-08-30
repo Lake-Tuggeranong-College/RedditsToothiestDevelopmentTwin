@@ -38,8 +38,6 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                 </ul>
             </div>
         </div>
-        <!-- If someone could find a way to have separation between the columns, that would be great -->
-        <!-- Currently, these sit in the centre rather than touching the edges as I would have liked -->
         <div class="col-9 bg-light p-3 border">
             <!--Pulls the details from the Posts table-->
 <?php
