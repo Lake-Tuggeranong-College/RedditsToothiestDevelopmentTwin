@@ -35,7 +35,7 @@ $userEnabled = $userData["enabled"];
 
             <p>Please enter new username:</p>
 
-            <p>Username<input type="text" name="Newusername" class="form-control" required="required"></p>
+            <p>Username<input type="text" name="newusername" class="form-control" required="required" value="<?php echo"$userName" ?>"></p>
 
         </div>
             <div class="col-md-12">
@@ -45,19 +45,6 @@ $userEnabled = $userData["enabled"];
                 <p>Password<input type="password" name="password" class="form-control" required="required"></p>
 
             </div>
-       <div class="col-md-12">
-
-        <p>Please enter new access level:</p>
-
-        <p>Access Level<input type="text" name="password" class="form-control" required="required"></p>
-
-    </div>
-    <div class="col-md-12">
-
-    <p>Please enter enabled:</p>
-
-    <p>Enabled<input type="text" name="password" class="form-control" required="required"></p>
-
     </div>
         </div>
     </div>
@@ -66,17 +53,20 @@ $userEnabled = $userData["enabled"];
 
 <?php
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $password = sanitise_data($_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $accessLevel = 1;
+    $newusername = sanitise_data($_POST['newusername']);
     //$hashed_password;
 
 
-        $sql = "UPDATE Users SET HashedPassword = :newPassword WHERE UserID='$userid'";
+        $sql = "UPDATE Users SET Username = :newusername, HashedPassword = :newPassword WHERE UserID='$userid'";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':newPassword', $hashed_password);
+        $stmt->bindValue(':newusername', $newusername);
         $stmt->execute();
         $_SESSION["flash_message"] = "Password Reset!";
         header("Location:index.php");
