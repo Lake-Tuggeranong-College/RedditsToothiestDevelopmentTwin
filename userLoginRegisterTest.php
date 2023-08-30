@@ -8,7 +8,7 @@ if (!authorisedAccess(true, false, false)) {
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col bg-light border">
             <title>R2D2 - Login/Register</title>
 
             <h1 class='text-primary'>Login</h1>
@@ -71,7 +71,7 @@ if (!authorisedAccess(true, false, false)) {
 
             ?>
         </div>
-        <div class="col">
+        <div class="col bg-light border">
 <!--            A known error is that this register section doesn't work. It treats it as a Login attempt-->
             <h1 class='text-primary'>Register</h1>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
