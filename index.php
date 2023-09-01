@@ -12,7 +12,9 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
     <div class="row">
         <div class="col">
             <div class="col bg-light p-1 border">
-                <p><u><b><center>Trending Communities</center></b></u></p>
+                <p><u><b>
+                            <center>Trending Communities</center>
+                        </b></u></p>
                 <ul>
                     <li>Community</li>
                     <li>Community</li>
@@ -26,7 +28,9 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                 <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
             </div>
             <div class="col bg-light p-1 border">
-                <p><u><b><center>Hot Topics</center></b></u></p>
+                <p><u><b>
+                            <center>Hot Topics</center>
+                        </b></u></p>
                 <ul>
                     <li>Topic</li>
                     <li>Topic</li>
@@ -45,7 +49,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             //    defining number of posts per page
             $postsPerPage = 10;
 
-            if (!isset ($_GET['page']) ) {
+            if (!isset ($_GET['page'])) {
                 $page = 1;
                 $postNumStart = 0;
             } else {
@@ -60,7 +64,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             //    echo $postNumStart;
             $modAccessLevel = 2;
             $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
-print_r($page);
+            //print_r($page);
             ?>
 
 
@@ -87,7 +91,7 @@ print_r($page);
                     <div class="POSTFOOTER">
                         <?php if ($_SESSION["access_level"] == $modAccessLevel) {
                             ?>
-                            <form action="index.php?DisableID=<?=$postData['ID']?>"  method="post">
+                            <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
                                 <button type="submit" class="btn btn-outline-danger">Disable</button>
                             </form>
                         <?php }
@@ -96,17 +100,22 @@ print_r($page);
                     </div>
                 </div>
             <?php }
-            if($page >= 2){
+            if ($page >= 2) {
+                ?>
+                <form action="index.php?page=<?= $page - 1 ?>" method="post">
+                    <button type="submit" class="btn btn-outline-danger">Previous Page</button>
+                </form>
+            <?php }
+$info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 1");
+            $data = $info->fetch();
+            $numberOfPosts = (int)$data[0];
+            $PostDisplayed = $page * $postsPerPage;
+            if ($numberOfPosts >= $PostDisplayed){
             ?>
-            <form action="index.php?page=<?=$page - 1?>"  method="post">
-                <button type="submit" class="btn btn-outline-danger">Previous  Page</button>
-            </form>
-            <?php }?>
-            <form action="index.php?page=<?=$page + 1?>"  method="post">
+            <form action="index.php?page=<?= $page + 1 ?>" method="post">
                 <button type="submit" class="btn btn-outline-success">Next Page</button>
             </form>
-
-</body>
+<?php }?>
 
 
 <?php
@@ -124,27 +133,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 
-        </div>
-        <div class="col">
-            <div class="col bg-light p-2 border">
-                <p><u><b><center>Following</center></b></u></p>
-                <ul>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                    <li>User - Online Status</li>
-                </ul>
-                <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
-            </div>
-            <div class="col bg-light p-3 border">
-                <p><u><b><center>Private Messaging</center></b></u></p>
-                <p>This is where the private messaging code would go, if we had any.</p>
-            </div>
-        </div>
+</div>
+<div class="col">
+    <div class="col bg-light p-2 border">
+        <p><u><b>
+                    <center>Following</center>
+                </b></u></p>
+        <ul>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+            <li>User - Online Status</li>
+        </ul>
+        <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
     </div>
+    <div class="col bg-light p-3 border">
+        <p><u><b>
+                    <center>Private Messaging</center>
+                </b></u></p>
+        <p>This is where the private messaging code would go, if we had any.</p>
+    </div>
+</div>
+</div>
 </div>
 </body>

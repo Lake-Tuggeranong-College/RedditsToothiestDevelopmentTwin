@@ -1,6 +1,9 @@
 <?php include "template.php";
 /**  @var $conn */
 isEnabled($conn);
+if (!authorisedAccess(false, false, true)) {
+    header("Location:index.php");
+}
 
 if (isset($_GET["disableID"])) {
     if ($_SESSION["access_level"] == 3) {
@@ -27,6 +30,48 @@ if (isset($_GET["enableID"])) {
     $stmt->bindParam(":enable", $enable);
     $stmt->bindParam(":enableID", $enableID);
     $enable = 1;
+    $stmt->execute();
+    header("Location:userList.php");
+}
+if (isset($_GET["admin"])) {
+    if ($_SESSION["access_level"] == 3) {
+        $adminID = $_GET["admin"];
+    } else {
+        header("Location:index.php");
+    }
+    echo "Admin ID found: $adminID";
+    $stmt = $conn->prepare("UPDATE Users SET AccessLevel = :admin WHERE UserID = :adminID");
+    $stmt->bindParam(":admin", $admin);
+    $stmt->bindParam(":adminID", $adminID);
+    $admin = 3;
+    $stmt->execute();
+    header("Location:userList.php");
+}
+if (isset($_GET["mod"])) {
+    if ($_SESSION["access_level"] == 3) {
+        $modID = $_GET["mod"];
+    } else {
+        header("Location:index.php");
+    }
+    echo "Mod ID found: $modID";
+    $stmt = $conn->prepare("UPDATE Users SET AccessLevel = :mod WHERE UserID = :modID");
+    $stmt->bindParam(":mod", $mod);
+    $stmt->bindParam(":modID", $modID);
+    $mod = 2;
+    $stmt->execute();
+    header("Location:userList.php");
+}
+if (isset($_GET["user"])) {
+    if ($_SESSION["access_level"] == 3) {
+        $setID = $_GET["user"];
+    } else {
+        header("Location:index.php");
+    }
+    echo "User ID found: $setID";
+    $stmt = $conn->prepare("UPDATE Users SET AccessLevel = :user WHERE UserID = :setID");
+    $stmt->bindParam(":user", $user);
+    $stmt->bindParam(":setID", $setID);
+    $user = 1;
     $stmt->execute();
     header("Location:userList.php");
 }
@@ -81,6 +126,10 @@ if ($_SESSION['access_level'] == 3) {
                             <a class="dropdown-item" href="userProfile.php?UserID=<?php echo $userData["UserID"]?>">Edit User</a>
                             <a class="dropdown-item" href="userList.php?enableID=<?php echo $userData["UserID"]?>">Enable User</a>
                             <a class="dropdown-item" href="userList.php?disableID=<?php echo $userData["UserID"]?>">Disable User</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="userList.php?admin=<?php echo $userData["UserID"]?>">Set as Administrator</a>
+                            <a class="dropdown-item" href="userList.php?mod=<?php echo $userData["UserID"]?>">Set as Moderator</a>
+                            <a class="dropdown-item" href="userList.php?user=<?php echo $userData["UserID"]?>">Set as User</a>
                         </div>
                     </div>
                 </div>
