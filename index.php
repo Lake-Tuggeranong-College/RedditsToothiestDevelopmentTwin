@@ -1,6 +1,7 @@
 <title>Index</title>
 <?php include "template.php";
 /**  @var $conn */
+//test
 ?>
 <link rel="stylesheet" href="css/style.css">
 <body>
