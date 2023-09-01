@@ -41,25 +41,9 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col-9 bg-light p-3 border">
             <!--Pulls the details from the Posts table-->
             <?php
-            //    defining number of posts per page
-            $postsPerPage = 10;
-
-            if (!isset ($_GET['page']) ) {
-                $page = 1;
-                $postNumStart = 0;
-            } else {
-                $page = $_GET['page'];
-                $pageNum = $page - 1;
-                $postNumStart = $pageNum * $postsPerPage;
-            }
-
-            //    echo $page;
-            //    echo $pageNum;
-            //    echo $postsPerPage;
-            //    echo $postNumStart;
             $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
-print_r($page);
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 0 ORDER BY ID DESC ");
+
             ?>
 
 
@@ -86,33 +70,24 @@ print_r($page);
                     <div class="POSTFOOTER">
                         <?php if ($_SESSION["access_level"] == $modAccessLevel) {
                             ?>
-                            <form action="index.php?DisableID=<?=$postData['ID']?>"  method="post">
-                                <button type="submit" class="btn btn-outline-danger">Disable</button>
+                            <form action="adminEnablePost.php?EnableID=<?=$postData['ID']?>"  method="post">
+                                <button type="submit" class="btn btn-outline-success">Enable</button>
                             </form>
                         <?php }
 
                         ?>
                     </div>
                 </div>
-            <?php }
-            if($page >= 2){
-            ?>
-            <form action="index.php?page=<?=$page - 1?>"  method="post">
-                <button type="submit" class="btn btn-outline-danger">Previous  Page</button>
-            </form>
             <?php }?>
-            <form action="index.php?page=<?=$page + 1?>"  method="post">
-                <button type="submit" class="btn btn-outline-success">Next Page</button>
-            </form>
 
 </body>
 
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_GET["DisableID"])) {
-        $postID = $_GET["DisableID"];
-        $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+    if (isset($_GET["EnableID"])) {
+        $postID = $_GET["EnableID"];
+        $sql = "UPDATE Posts SET Enabled = 1 WHERE ID ='$postID'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $_SESSION["flash_message"] = "Post Disabled";
@@ -121,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
 
         </div>
         <div class="col">
