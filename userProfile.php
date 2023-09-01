@@ -29,18 +29,8 @@ $userEnabled = $userData["enabled"];
 <h1 class='text-primary'>Edit your profile</h1>
 <form action="userProfile.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
-        <div class="row">
-            <!--Customer Details-->
-
-
-            <p>Please enter new username:</p>
-
-            <p>Username<input type="text" name="newusername" class="form-control" required="required" value="<?php echo"$userName" ?>"></p>
-
-        </div>
             <div class="col-md-12">
 
-                <p>Please enter new password:</p>
 
                 <p>Password<input type="password" name="password" class="form-control" required="required"></p>
 
@@ -56,17 +46,15 @@ $userEnabled = $userData["enabled"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+
     $password = sanitise_data($_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $accessLevel = 1;
-    $newusername = sanitise_data($_POST['newusername']);
     //$hashed_password;
 
-
-        $sql = "UPDATE Users SET Username = :newusername, HashedPassword = :newPassword WHERE UserID='$userid'";
+        $sql = "UPDATE Users SET HashedPassword = :newPassword WHERE UserID='$userid'";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':newPassword', $hashed_password);
-        $stmt->bindValue(':newusername', $newusername);
         $stmt->execute();
         $_SESSION["flash_message"] = "Password Reset!";
         header("Location:userLogout.php");
