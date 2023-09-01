@@ -59,7 +59,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             //    echo $postNumStart;
             $modAccessLevel = 2;
             $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
-print_r($page);
+//print_r($page);
             ?>
 
 
