@@ -42,9 +42,25 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col-9 bg-light p-3 border">
             <!--Pulls the details from the Posts table-->
             <?php
-            $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC ");
+            //    defining number of posts per page
+            $postsPerPage = 10;
 
+            if (!isset ($_GET['page']) ) {
+                $page = 1;
+                $postNumStart = 0;
+            } else {
+                $page = $_GET['page'];
+                $pageNum = $page - 1;
+                $postNumStart = $pageNum * $postsPerPage;
+            }
+
+            //    echo $page;
+            //    echo $pageNum;
+            //    echo $postsPerPage;
+            //    echo $postNumStart;
+            $modAccessLevel = 2;
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
+print_r($page);
             ?>
 
 
@@ -79,7 +95,16 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                         ?>
                     </div>
                 </div>
+            <?php }
+            if($page >= 2){
+            ?>
+            <form action="index.php?page=<?=$page - 1?>"  method="post">
+                <button type="submit" class="btn btn-outline-danger">Previous  Page</button>
+            </form>
             <?php }?>
+            <form action="index.php?page=<?=$page + 1?>"  method="post">
+                <button type="submit" class="btn btn-outline-success">Next Page</button>
+            </form>
 
 </body>
 
@@ -97,6 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
 
         </div>
         <div class="col">
