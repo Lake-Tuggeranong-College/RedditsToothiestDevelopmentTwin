@@ -8,7 +8,7 @@
     <!--Pulls the details from the Posts table-->
     <?php
     $modAccessLevel = 2;
-    $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC ");
+    $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1");
 
     ?>
 
@@ -37,7 +37,7 @@
             <?php if ($_SESSION["access_level"] == $modAccessLevel) {
                 ?>
                             <form action="testPostDisplay.php?DisableID=<?=$postData['ID']?>"  method="post">
-                                <button type="submit" class="btn btn-outline-danger">Disable</button>
+                                <button type="submit" >Disable</button>
                             </form>
             <?php }
 
