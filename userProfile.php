@@ -1,6 +1,6 @@
 <?php include "template.php";
 /** @var $conn */
-
+isEnabled($conn);
 if (!authorisedAccess(false, true, true)) {
     header("Location:index.php");
 }
@@ -24,9 +24,9 @@ $userEnabled = $userData["enabled"];
 ?>
 
 
-<title>Register Page</title>
+<title>Edit Profile</title>
 
-<h1 class='text-primary'>Reset Password <?=$userid?></h1>
+<h1 class='text-primary'>Edit your profile</h1>
 <form action="userProfile.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindValue(':newusername', $newusername);
         $stmt->execute();
         $_SESSION["flash_message"] = "Password Reset!";
-        header("Location:index.php");
+        header("Location:userLogout.php");
 
 
 }

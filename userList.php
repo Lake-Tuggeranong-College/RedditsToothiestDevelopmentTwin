@@ -78,7 +78,7 @@ if ($_SESSION['access_level'] == 3) {
                             User Options
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="userProfile.php?UserID=<?php echo $userData["UserID"]?>">Reset Password</a>
+                            <a class="dropdown-item" href="userProfile.php?UserID=<?php echo $userData["UserID"]?>">Edit User</a>
                             <a class="dropdown-item" href="userList.php?enableID=<?php echo $userData["UserID"]?>">Enable User</a>
                             <a class="dropdown-item" href="userList.php?disableID=<?php echo $userData["UserID"]?>">Disable User</a>
                         </div>

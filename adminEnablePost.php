@@ -42,7 +42,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             <!--Pulls the details from the Posts table-->
             <?php
             $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC ");
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 0 ORDER BY ID DESC ");
 
             ?>
 
@@ -70,8 +70,8 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <div class="POSTFOOTER">
                         <?php if ($_SESSION["access_level"] == $modAccessLevel) {
                             ?>
-                            <form action="index.php?DisableID=<?=$postData['ID']?>"  method="post">
-                                <button type="submit" class="btn btn-outline-danger">Disable</button>
+                            <form action="adminEnablePost.php?EnableID=<?=$postData['ID']?>"  method="post">
+                                <button type="submit" class="btn btn-outline-success">Enable</button>
                             </form>
                         <?php }
 
@@ -85,9 +85,9 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_GET["DisableID"])) {
-        $postID = $_GET["DisableID"];
-        $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+    if (isset($_GET["EnableID"])) {
+        $postID = $_GET["EnableID"];
+        $sql = "UPDATE Posts SET Enabled = 1 WHERE ID ='$postID'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $_SESSION["flash_message"] = "Post Disabled";
