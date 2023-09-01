@@ -9,7 +9,8 @@ if (!authorisedAccess(false, true, true)) {
 <div>
     <div>
         <h1>Create a Post</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+              enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="Posts" class="form-label">Title</label>
                 <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Post"
@@ -40,12 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    $UpVotes = 'h';
 //    $Enabled = 'h';
     $location = 'Working On';
-
-    if(array_key_exists('Image', $_FILES) && array_key_exists('error', $_FILES['Image'])) {
-
-
-    }
-
+    $NoImage = null;
     // defining what type of file is allowed
     // We separate the file, and obtain the file extension.
 
@@ -57,40 +53,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo 'You cant have the Title bigger then 200 charaters';
     } else {
         $file = $_FILES['postImage'];
-        $fileName = $_FILES['postImage']['name'];
-        $fileTmpName = $_FILES['postImage']['tmp_name'];
-        $fileSize = $_FILES['postImage']['size'];
-        $fileError = $_FILES['postImage']['error'];
-        $fileType = $_FILES['postImage']['type'];
+        if ($_FILES['postImage']['size'] == 0) {
+            $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':BodyText', $BodyText);
+            $stmt->bindValue(':UserID', $userID);
+            $stmt->bindValue(':Title', $Title);
+            $stmt->bindValue(':DateTime', $DateTime);
+            $stmt->bindValue(':location', $location);
+            $stmt->execute();
+            $_SESSION["flash_message"] = "Post Create!!";
+        } else {
 
-        $fileExtension = explode('.', $fileName);
-        $fileActualExtension = strtolower(end($fileExtension));
+            $fileName = $_FILES['postImage']['name'];
+            $fileTmpName = $_FILES['postImage']['tmp_name'];
+            $fileSize = $_FILES['postImage']['size'];
+            $fileError = $_FILES['postImage']['error'];
+            $fileType = $_FILES['postImage']['type'];
 
-        $allowedExtensions = array('jpg', 'jpeg', 'png', 'pdf');
+            $fileExtension = explode('.', $fileName);
+            $fileActualExtension = strtolower(end($fileExtension));
 
-        if (in_array($fileActualExtension, $allowedExtensions)) {
-            if ($fileError === 0) {
-                // File is smaller than arbitrary size
-                if ($fileSize < 10000000000) {
-                    //file name is now a unique ID based on time with IMG- preceeding it, followed by the file type.
-                    $fileNameNew = uniqid('IMG-', True) . "." . $fileActualExtension;
-                    //upload location
-                    $fileDestination = 'images/PostImages/' . $fileNameNew;
-                    // Upload file
-                    move_uploaded_file($fileTmpName, $fileDestination);
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'pdf');
 
-                    $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location, Image) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location, :Image)";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bindValue(':BodyText', $BodyText);
-                    $stmt->bindValue(':UserID', $userID);
-                    $stmt->bindValue(':Title', $Title);
-                    $stmt->bindValue(':DateTime', $DateTime);
-                    $stmt->bindValue(':Image', $fileNameNew);
-                    $stmt->bindValue(':location', $location);
-                    $stmt->execute();
-                    $_SESSION["flash_message"] = "Post Create!!";
+            if (in_array($fileActualExtension, $allowedExtensions)) {
+                if ($fileError === 0) {
+                    // File is smaller than arbitrary size
+                    if ($fileSize < 10000000000) {
+                        //file name is now a unique ID based on time with IMG- proceeding it, followed by the file type.
+                        $fileNameNew = uniqid('IMG-', True) . "." . $fileActualExtension;
+                        //upload location
+                        $fileDestination = 'images/PostImages/' . $fileNameNew;
+                        // Upload file
+                        move_uploaded_file($fileTmpName, $fileDestination);
+
+                        $sql = "INSERT INTO Posts (BodyText, UserID, Title, DateTime, DownVotes, UpVotes, Enabled, location, Image) VALUES ( :BodyText, :UserID, :Title, :DateTime, 0, 0, true, :location, :Image)";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bindValue(':BodyText', $BodyText);
+                        $stmt->bindValue(':UserID', $userID);
+                        $stmt->bindValue(':Title', $Title);
+                        $stmt->bindValue(':DateTime', $DateTime);
+                        $stmt->bindValue(':Image', $fileNameNew);
+                        $stmt->bindValue(':location', $location);
+                        $stmt->execute();
+                        $_SESSION["flash_message"] = "Post Create!!";
+                    } else {
+                        echo "Your image is too big!";
+                    }
+                } else {
+                    echo "there was an error uploading your image!";
                 }
+            } else {
+                echo "You cannot upload files of this type!";
             }
+
+
         }
     }
 
