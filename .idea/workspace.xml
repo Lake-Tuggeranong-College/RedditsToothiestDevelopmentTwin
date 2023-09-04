@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Replaced postUpload.php's UI">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b/storage_v2/_src_/schema/r2d2.Tpo0AA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/postUpload.php" afterDir="false" />
-    </list>
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Putting my center tags BACK" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +71,7 @@
       <workItem from="1693181709096" duration="198000" />
       <workItem from="1693181915653" duration="1495000" />
       <workItem from="1693357426313" duration="1972000" />
-      <workItem from="1693786905577" duration="968000" />
+      <workItem from="1693786905577" duration="1292000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -111,7 +105,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693359001483</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Replaced postUpload.php's UI + index.php cleanup">
+      <option name="closed" value="true" />
+      <created>1693788026520</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693788026520</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Putting my center tags BACK">
+      <option name="closed" value="true" />
+      <created>1693788053658</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693788053658</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +133,8 @@
     <MESSAGE value="weird things to prevent the breaking of phpstorm" />
     <MESSAGE value="Basic &quot;draft&quot; for postUpload.php UI" />
     <MESSAGE value="Replaced postUpload.php's UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced postUpload.php's UI" />
+    <MESSAGE value="Replaced postUpload.php's UI + index.php cleanup" />
+    <MESSAGE value="Putting my center tags BACK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Putting my center tags BACK" />
   </component>
 </project>
