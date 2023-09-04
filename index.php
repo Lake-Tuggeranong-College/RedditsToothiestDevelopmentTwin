@@ -96,7 +96,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                             }else{
                                 //nothing (there is no image)
                             }
-                        }else{
+                        } else {
                             //Something broke this should not happen!!!!!!!!!!!
                         }
                         ?>
@@ -106,13 +106,14 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
                     <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
                     <div class="POSTFOOTER">
-                        <?php if ($_SESSION["access_level"] == $modAccessLevel) {
-                            ?>
-                            <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
-                                <button type="submit" class="btn btn-outline-danger">Disable</button>
-                            </form>
-                        <?php }
-
+                        <?php if (isset($_SESSION["access_level"])) {
+                            if ($_SESSION["access_level"] == $modAccessLevel) {
+                                ?>
+                                <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
+                                    <button type="submit" class="btn btn-outline-danger">Disable</button>
+                                </form>
+                            <?php }
+                        }
                         ?>
                     </div>
                 </div>
@@ -132,7 +133,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                 <form action="index.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>
                 </form>
-            <?php }?>
+            <?php } ?>
 
 
             <?php
@@ -149,6 +150,19 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
             ?>
 
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_GET["DisableID"])) {
+                    $postID = $_GET["DisableID"];
+                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Disabled";
+                    header("Location:index.php");
+                }
+            }
+
+            ?>
 
         </div>
         <div class="col">
