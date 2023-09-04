@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fileExtension = explode('.', $fileName);
             $fileActualExtension = strtolower(end($fileExtension));
 
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'pdf');
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif');
 
             if (in_array($fileActualExtension, $allowedExtensions)) {
                 if ($fileError === 0) {
@@ -169,10 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo "You cannot upload files of this type!";
             }
-
-
         }
     }
-
 }
 ?>
