@@ -62,7 +62,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             //    echo $postsPerPage;
             //    echo $postNumStart;
             $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID, image FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
             //print_r($page);
             ?>
 
@@ -83,7 +83,14 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <hr>
                     <!--    this is the div that will display the contents of the body of the post-->
                     <div class="POSTBODY">
-                        <?php echo $postData[0]; ?>
+                        <?php echo $postData[0];
+                        if(!empty($postData[4])){
+                            echo "<img scr='images/PostImages/".$postData[4]."' alt='Post Image'>";
+                        }else{
+
+                        }
+
+                        ?>
                     </div>
 
                     <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
@@ -109,7 +116,7 @@ $info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 1");
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
-            if ($numberOfPosts >= $PostDisplayed){
+            if ($numberOfPosts > $PostDisplayed){
             ?>
             <form action="index.php?page=<?= $page + 1 ?>" method="post">
                 <button type="submit" class="btn btn-outline-success">Next Page</button>
