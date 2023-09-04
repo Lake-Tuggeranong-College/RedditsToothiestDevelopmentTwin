@@ -83,16 +83,17 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <hr>
                     <!--    this is the div that will display the contents of the body of the post-->
                     <div class="POSTBODY">
-                        <?php echo $postData[0];
-                        $post_id = $postData[3];
-                        $stmt = $conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
+                        <?php echo $postData[0].'<br>';
+
+                        $post_id=$postData[3];
+                        $stmt=$conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
                         $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
                         $stmt->execute();
-                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                        if ($stmt->rowCount() > 0) {
-                            if (!empty($row['image'])) {
-                                echo "<img src='images/PostImages/" . $row['image'] . "' alt='Post Image'>";
-                            } else {
+                        $row=$stmt->fetch(PDO::FETCH_ASSOC);
+                        if($stmt->rowCount()>0){
+                            if(!empty($row['image'])){
+                                echo"<img class='img-fluid max-width: 10%' src='images/PostImages/".$row['image']."' alt='Post Image'>";
+                            }else{
                                 //nothing (there is no image)
                             }
                         } else {
@@ -127,7 +128,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
-            if ($numberOfPosts >= $PostDisplayed) {
+            if ($numberOfPosts >= $PostDisplayed){
                 ?>
                 <form action="index.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>
@@ -149,6 +150,19 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
             ?>
 
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_GET["DisableID"])) {
+                    $postID = $_GET["DisableID"];
+                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Disabled";
+                    header("Location:index.php");
+                }
+            }
+
+            ?>
 
         </div>
         <div class="col">
