@@ -12,7 +12,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col">
             <div class="col bg-light p-1 border">
                 <p><u><b>
-                            <center>Trending Communities</center>
+                            Trending Communities
                         </b></u></p>
                 <ul>
                     <li>Community</li>
@@ -28,7 +28,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             </div>
             <div class="col bg-light p-1 border">
                 <p><u><b>
-                            <center>Hot Topics</center>
+                            Hot Topics<
                         </b></u></p>
                 <ul>
                     <li>Topic</li>
@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="col">
     <div class="col bg-light p-2 border">
         <p><u><b>
-                    <center>Following</center>
+                    Following
                 </b></u></p>
         <ul>
             <li>User - Online Status</li>
@@ -152,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="col bg-light p-3 border">
         <p><u><b>
-                    <center>Private Messaging</center>
+                    Private Messaging
                 </b></u></p>
         <p>This is where the private messaging code would go, if we had any.</p>
     </div>
