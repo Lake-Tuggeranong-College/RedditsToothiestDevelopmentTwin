@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Putting my center tags BACK" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b/storage_v2/_src_/schema/r2d2.Tpo0AA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ff661f9d-7886-47d6-abaa-2dabf241785b/storage_v2/_src_/schema/r2d2.Tpo0AA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_8_23,_2_11_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_8_23,_2_14_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_8_23,_2_26_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_8_23__2_11_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_8_23__2_14_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_8_23__2_26_pm__Changes_.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,9 +78,6 @@
       <workItem from="1691972450975" duration="5237000" />
       <workItem from="1692330242483" duration="5530000" />
       <workItem from="1693181709096" duration="198000" />
-      <workItem from="1693181915653" duration="1495000" />
-      <workItem from="1693357426313" duration="1972000" />
-      <workItem from="1693786905577" duration="1292000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -89,39 +95,7 @@
       <option name="project" value="LOCAL" />
       <updated>1692334591277</updated>
     </task>
-    <task id="LOCAL-00003" summary="weird things to prevent the breaking of phpstorm">
-      <option name="closed" value="true" />
-      <created>1693181947003</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1693181947003</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Basic &quot;draft&quot; for postUpload.php UI">
-      <option name="closed" value="true" />
-      <created>1693359001483</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1693359001483</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Replaced postUpload.php's UI + index.php cleanup">
-      <option name="closed" value="true" />
-      <created>1693788026520</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1693788026520</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Putting my center tags BACK">
-      <option name="closed" value="true" />
-      <created>1693788053658</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1693788053658</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,11 +104,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created a testPostDisplay.php page&#10;underway" />
     <MESSAGE value="feed and post working css added still in progress" />
-    <MESSAGE value="weird things to prevent the breaking of phpstorm" />
-    <MESSAGE value="Basic &quot;draft&quot; for postUpload.php UI" />
-    <MESSAGE value="Replaced postUpload.php's UI" />
-    <MESSAGE value="Replaced postUpload.php's UI + index.php cleanup" />
-    <MESSAGE value="Putting my center tags BACK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Putting my center tags BACK" />
+    <option name="LAST_COMMIT_MESSAGE" value="feed and post working css added still in progress" />
   </component>
 </project>

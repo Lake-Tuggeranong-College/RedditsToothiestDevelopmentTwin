@@ -48,11 +48,20 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="userList.php">User List</a>
                         <a class="dropdown-item" href="receivedMessages.php">Received Messages</a>
+<!--                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Moderator Functions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="userList.php">User List</a>
+                                    <a class="dropdown-item" href="receivedMessages.php">Received Messages</a>
+                                    work in progress moderator dropdown box
+                                    -->
                         <?php
                     }
                     ?>
-                    </ul>
-                    </li>
+
 
                     <?php
                 } else {
