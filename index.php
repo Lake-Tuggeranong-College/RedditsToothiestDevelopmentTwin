@@ -83,7 +83,24 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <hr>
                     <!--    this is the div that will display the contents of the body of the post-->
                     <div class="POSTBODY">
-                        <?php echo $postData[0]; ?>
+                        <?php echo $postData[0];
+                        $post_id=$postData[3];
+                        $stmt=$conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
+                        $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $row=$stmt->fetch(PDO::FETCH_ASSOC);
+                        if($stmt->rowCount()>0){
+                            if(!empty($row['image'])){
+                                echo"<img src='images/PostImages/".$row['image']."' alt='Post Image'>";
+                            }else{
+                                //nothing (there is no image)
+                            }
+                        }else{
+                            //Something broke this should not happen!!!!!!!!!!!
+                        }
+                        ?>
+
+
                     </div>
 
                     <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
