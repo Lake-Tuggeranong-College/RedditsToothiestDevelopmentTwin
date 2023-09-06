@@ -127,7 +127,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $_SESSION["flash_message"] = "Post Create!!";
         } else {
-
             $fileName = $_FILES['postImage']['name'];
             $fileTmpName = $_FILES['postImage']['tmp_name'];
             $fileSize = $_FILES['postImage']['size'];
