@@ -11,7 +11,7 @@ if (!authorisedAccess(false, true, true)) {
     <body>
 <title>Contact Us</title>
 <div class="container-fluid">
-    <h1 style="color: #000000;">Contact Us</h1>
+    <h1 style="color: #000000;" class="text-primary">Contact Us</h1>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="mb-3">
             <label for="contactUsername" class="form-label">Username</label>
