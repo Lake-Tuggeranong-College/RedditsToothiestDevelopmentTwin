@@ -41,8 +41,22 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col-9 bg-light p-3 border">
             <!--Pulls the details from the Posts table-->
             <?php
+
+            //    defining number of posts per page
+            $postsPerPage = 10;
+
+            if (!isset ($_GET['page'])) {
+                $page = 1;
+                $postNumStart = 0;
+            } else {
+                $page = $_GET['page'];
+                $pageNum = $page - 1;
+                $postNumStart = $pageNum * $postsPerPage;
+            }
+
+
             $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 0 ORDER BY ID DESC ");
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID  FROM Posts WHERE Enabled = 0 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage");
 
             ?>
 
@@ -68,7 +82,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
                     <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
                     <div class="POSTFOOTER">
-                        <?php if ($_SESSION["access_level"] == $modAccessLevel) {
+                        <?php if ($_SESSION["access_level"] >= $modAccessLevel) {
                             ?>
                             <form action="adminEnablePost.php?EnableID=<?=$postData['ID']?>"  method="post">
                                 <button type="submit" class="btn btn-outline-success">Enable</button>
@@ -96,6 +110,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
+
+<!--          start of pagination-->
+<?php
+            if ($page >= 2) {
+                ?>
+                <form action="adminEnablePost.php?page=<?= $page - 1 ?>" method="post">
+                    <button type="submit" class="btn btn-outline-danger">Previous Page</button>
+                </form>
+            <?php }
+            $info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 0");
+            $data = $info->fetch();
+            $numberOfPosts = (int)$data[0];
+            $PostDisplayed = $page * $postsPerPage;
+            if ($numberOfPosts > $PostDisplayed){
+                ?>
+                <form action="adminEnablePost.php?page=<?= $page + 1 ?>" method="post">
+                    <button type="submit" class="btn btn-outline-success">Next Page</button>
+                </form>
+            <?php } ?>
+
+
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_GET["DisableID"])) {
+                    $postID = $_GET["DisableID"];
+                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Disabled";
+                    header("Location:adminEnablePost.php");
+                }
+            }
+
+            ?>
+
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_GET["DisableID"])) {
+                    $postID = $_GET["DisableID"];
+                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Disabled";
+                    header("Location:adminEnablePost.php");
+                }
+            }
+
+            ?>
+
 
         </div>
         <div class="col">
