@@ -32,13 +32,14 @@
 <!--                </select>-->
 
                 <?php
-                $accessLevel = 3;
+                $adminAccessLevel = 3;
                 if (isset($_SESSION["username"])) {
                     echo '
                     <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
                     
                     ';
-                    if ($_SESSION["access_level"] == $accessLevel) {
+                    if (isset($_SESSION["access_level"])) {
+                        if ($_SESSION["access_level"] == $adminAccessLevel) {
 
                         ?>
                         <li class="nav-item dropdown">
@@ -51,21 +52,36 @@
                         <a class="dropdown-item" href="receivedMessages.php">Received Messages</a>
                             <a class="dropdown-item" href="adminEnablePost.php"> Reenable Post</a>
                         </ul></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                    Moderator Functions
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="adminEnablePost.php"> Re-enable Post</a>
-                                    <a class="dropdown-item" href=".php"> work in progress</a>
-                                </ul></li>
                         <?php
                     }
+                    }
+                }
                     ?>
+                        <?php
+                        $modAccessLevel = 2;
+                        if (isset($_SESSION["username"])) {
+                        echo '
+                    <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
+                    
+                    ';
+                        if (isset($_SESSION["access_level"])) {
+                        if ($_SESSION["access_level"] == $modAccessLevel) {
+
+                        ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Moderator Functions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="adminEnablePost.php"> Re-enable Post</a>
+                            <a class="dropdown-item" href=".php"> work in progress</a>
+                        </ul></li>
 
 
                     <?php
+                    }
+                    }
                 } else {
                     echo '
                     <li class="nav-item"><a class="nav-link" href="userRegister.php">Register</a></li>
