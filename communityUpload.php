@@ -4,6 +4,7 @@ include 'template.php';
 if (!authorisedAccess(false, true, true)) {
     header("Location:index.php");
 }
+
 ?>
 <div class="container-fluid">
     <div class="row">
