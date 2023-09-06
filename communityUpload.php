@@ -42,22 +42,22 @@ if (!authorisedAccess(false, true, true)) {
 <div>
     <div>
         <h1 class="text-primary">Create a Community</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="community"
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="communities"
               enctype="multipart/form-data">
             <!--Unsure about functionality. Placeholder for community tagging dropdown-->
             <div class="mb-3">
-                <label for="Community" class="form-label">Title</label>
+                <label for="Communities" class="form-label">Title</label>
 <!--                <label for="Posts" class="form-label">Flairs</label> Other placeholder for flair tag dropdown-->
-                <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Community"
+                <input type="text" class="form-control" id="title" name="title" placeholder="Tell about the Community"
                        required="required">
             </div>
             <div class="mb-3">
-                <label for="Community" class="form-label">Description</label>
+                <label for="Communities" class="form-label">Description</label>
 <!--                <label for="Posts" class="form-label">Text Settings</label> <Other OTHER placeholder to have text settings-->
-                <textarea class="form-control" id="Description" name="Description" rows="3"
+                <textarea class="form-control" id="description" name="description" rows="3"
                           required="required"></textarea>
             </div>
-            <button type="submit" name="PostSubmit" class="btn btn-primary">Post</button>
+            <button type="submit" name="CommunitiesSubmit" class="btn btn-primary">Post</button>
         </form>
     </div>
 </div>
@@ -84,9 +84,9 @@ if (!authorisedAccess(false, true, true)) {
         </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "COMMUNITY") {
-    $BodyText = sanitise_data($_COMMUNITIES['Description']);
+    $description = sanitise_data($_COMMUNITIES['description']);
 //    $Author = 'h';
-    $Title = sanitise_data($_COMMUNITIES['Title']);
+    $title = sanitise_data($_COMMUNITIES['title']);
 //    $DownVotes = 'h';
 //    $UpVotes = 'h';
 //    $Enabled = 'h';
@@ -95,9 +95,9 @@ if ($_SERVER["REQUEST_METHOD"] == "COMMUNITY") {
 
     //$username;
     //$hashed_password;
-    if (strlen($BodyText) >= 1024) {
+    if (strlen($description) >= 1024) {
         echo 'You cant have the Description bigger then 1024 charaters';
-    } else if (strlen($Title) >= 200) {
+    } else if (strlen($title) >= 200) {
         echo 'You cant have the Title bigger then 200 charaters';
     } else {
         $file = $_FILES['postImage'];
