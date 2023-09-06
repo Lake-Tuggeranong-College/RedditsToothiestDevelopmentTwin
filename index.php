@@ -92,7 +92,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                         $row=$stmt->fetch(PDO::FETCH_ASSOC);
                         if($stmt->rowCount()>0){
                             if(!empty($row['image'])){
-                                echo"<img class='img-fluid max-width: 10%' src='images/PostImages/".$row['image']."' alt='Post Image'>";
+                                echo"<img class='POSTIMG' src='images/PostImages/".$row['image']."' alt='Post Image'>";
                             }else{
                                 //nothing (there is no image)
                             }
