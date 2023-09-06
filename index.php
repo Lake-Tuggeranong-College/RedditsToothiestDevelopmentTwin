@@ -15,14 +15,20 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                             <center>Trending Communities</center>
                         </b></u></p>
                 <ul>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
+                    <li><?php
+                        $CommunityDetails = $conn->query("SELECT id, Title FROM Communities LIMIT 10");
+                        while ($postData = $CommunityDetails->fetch()) {
+                            $postData[1];
+                        }
+                        ?></li>
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
                 </ul>
                 <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
             </div>
@@ -83,17 +89,17 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <hr>
                     <!--    this is the div that will display the contents of the body of the post-->
                     <div class="POSTBODY">
-                        <?php echo $postData[0].'<br>';
+                        <?php echo $postData[0] . '<br>';
 
-                        $post_id=$postData[3];
-                        $stmt=$conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
+                        $post_id = $postData[3];
+                        $stmt = $conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
                         $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
                         $stmt->execute();
-                        $row=$stmt->fetch(PDO::FETCH_ASSOC);
-                        if($stmt->rowCount()>0){
-                            if(!empty($row['image'])){
-                                echo"<img class='POSTIMG' src='images/PostImages/".$row['image']."' alt='Post Image'>";
-                            }else{
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($stmt->rowCount() > 0) {
+                            if (!empty($row['image'])) {
+                                echo "<img class='POSTIMG' src='images/PostImages/" . $row['image'] . "' alt='Post Image'>";
+                            } else {
                                 //nothing (there is no image)
                             }
                         } else {
@@ -128,7 +134,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
-            if ($numberOfPosts >= $PostDisplayed){
+            if ($numberOfPosts >= $PostDisplayed) {
                 ?>
                 <form action="index.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>
