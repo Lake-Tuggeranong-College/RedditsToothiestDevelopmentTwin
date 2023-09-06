@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fileExtension = explode('.', $fileName);
             $fileActualExtension = strtolower(end($fileExtension));
 
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif');
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif', 'gif');
 
             if (in_array($fileActualExtension, $allowedExtensions)) {
                 if ($fileError === 0) {
