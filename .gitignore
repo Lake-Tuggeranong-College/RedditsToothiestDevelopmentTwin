@@ -11,3 +11,6 @@
 # MacOS files
 **/.DS_Store
 .DS_Store
+
+#PHPStorm Configuration Files
+.idea/*

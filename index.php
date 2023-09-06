@@ -16,14 +16,20 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                             <center>Trending Communities</center>
                         </b></u></p>
                 <ul>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
-                    <li>Community</li>
+                    <li><?php
+                        $CommunityDetails = $conn->query("SELECT id, Title FROM Communities LIMIT 10");
+                        while ($postData = $CommunityDetails->fetch()) {
+                            $postData[1];
+                        }
+                        ?></li>
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
+<!--                    <li>Community</li>-->
                 </ul>
                 <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
             </div>
@@ -63,7 +69,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             //    echo $postsPerPage;
             //    echo $postNumStart;
             $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID, UserID FROM Posts WHERE Enabled = 1 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
             //print_r($page);
             ?>
 
@@ -72,6 +78,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             while ($postData = $postDetails->fetch()) {
 //    print_r($postData);
 
+                $userName = $conn->query("SELECT Username FROM Users WHERE UserID = $postData[UserID]");
                 ?>
 
                 <!--this will be the border of the hole post-->
@@ -80,21 +87,22 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <!--    this is the div that will display the title and other things displayed in the headnote-->
                     <div class="POSTTITLE">
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
+                        <?php echo '<h4>' . $userName . '</h4>'; ?>
                     </div>
                     <hr>
                     <!--    this is the div that will display the contents of the body of the post-->
                     <div class="POSTBODY">
-                        <?php echo $postData[0].'<br>';
+                        <?php echo $postData[0] . '<br>';
 
-                        $post_id=$postData[3];
-                        $stmt=$conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
+                        $post_id = $postData[3];
+                        $stmt = $conn->prepare("SELECT image FROM Posts WHERE ID=:post_id");
                         $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
                         $stmt->execute();
-                        $row=$stmt->fetch(PDO::FETCH_ASSOC);
-                        if($stmt->rowCount()>0){
-                            if(!empty($row['image'])){
-                                echo"<img class='POSTIMG' src='images/PostImages/".$row['image']."' alt='Post Image'>";
-                            }else{
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($stmt->rowCount() > 0) {
+                            if (!empty($row['image'])) {
+                                echo "<img class='POSTIMG' src='images/PostImages/" . $row['image'] . "' alt='Post Image'>";
+                            } else {
                                 //nothing (there is no image)
                             }
                         } else {
@@ -119,6 +127,10 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     </div>
                 </div>
             <?php }
+
+
+//           start of pagination
+
             if ($page >= 2) {
                 ?>
                 <form action="index.php?page=<?= $page - 1 ?>" method="post">
@@ -129,7 +141,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
-            if ($numberOfPosts >= $PostDisplayed){
+            if ($numberOfPosts > $PostDisplayed){
                 ?>
                 <form action="index.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>

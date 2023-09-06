@@ -27,20 +27,19 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 <!--                <select name="language" id="language">-->
-<!--                    <option value="Admin Features" selected>Admin Features</option>-->
-<!--                    <option value="action 1">action 1</option>-->
-<!--                    <option value="action 2">action 2</option>-->
-<!--                    <option value="action 3" disabled>action 3</option>-->
-<!--                    <option value="action 4" >action 4</option>-->
+<!--                    <option value="Admin Features" selected>Light Mode</option>-->
+<!--                    <option value="action 1">Dark Mode</option>-->
 <!--                </select>-->
 
                 <?php
-                $accessLevel = 3;
+                $adminAccessLevel = 3;
                 if (isset($_SESSION["username"])) {
                     echo '
                     <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
+                    
                     ';
-                    if ($_SESSION["access_level"] == $accessLevel) {
+                    if (isset($_SESSION["access_level"])) {
+                        if ($_SESSION["access_level"] == $adminAccessLevel) {
 
                         ?>
                         <li class="nav-item dropdown">
@@ -51,13 +50,34 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="userList.php">User List</a>
                         <a class="dropdown-item" href="receivedMessages.php">Received Messages</a>
+                            <a class="dropdown-item" href="adminEnablePost.php"> Reenable Post</a>
+                        </ul></li>
                         <?php
                     }
+                    }
+                   }
                     ?>
-                    </ul>
-                    </li>
+                        <?php
+                        $modAccessLevel = 2;
+                        if (isset($_SESSION["username"])) {
+                        if (isset($_SESSION["access_level"])) {
+                        if ($_SESSION["access_level"] == $modAccessLevel) {
+
+                        ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Moderator Functions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="adminEnablePost.php"> Re-enable Post</a>
+                            <a class="dropdown-item" href=".php"> work in progress</a>
+                        </ul></li>
+
 
                     <?php
+                    }
+                    }
                 } else {
                     echo '
                     <li class="nav-item"><a class="nav-link" href="userRegister.php">Register</a></li>
