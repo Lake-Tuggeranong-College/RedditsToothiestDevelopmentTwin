@@ -71,7 +71,8 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             while ($postData = $postDetails->fetch()) {
 //    print_r($postData);
 
-                $userName = $conn->query("SELECT Username FROM Users WHERE UserID = $postData[UserID]");
+                $userInfo = $conn->query("SELECT Username FROM Users WHERE UserID = $postData[UserID]");
+                $userData = $userInfo->fetch();
                 ?>
 
                 <!--this will be the border of the hole post-->
@@ -80,7 +81,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <!--    this is the div that will display the title and other things displayed in the headnote-->
                     <div class="POSTTITLE">
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
-                        <?php echo '<h4>' . $userName . '</h4>'; ?>
+                        <?php echo '<h4>' . $userData[0] . '</h4>'; ?>
                     </div>
                     <hr>
                     <!--    this is the div that will display the contents of the body of the post-->
