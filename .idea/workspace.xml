@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Putting my center tags BACK" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="IMAGES" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,30 +25,34 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2TdLuzLMiwcDlxuSi8vWRACPCw6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nate_abraham/Documents/GitHub/NJPHP2023&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/nate_abraham/Documents/GitHub/NJPHP2023",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css" />
@@ -71,7 +75,7 @@
       <workItem from="1693181709096" duration="198000" />
       <workItem from="1693181915653" duration="1495000" />
       <workItem from="1693357426313" duration="1972000" />
-      <workItem from="1693786905577" duration="1292000" />
+      <workItem from="1693786905577" duration="1697000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -121,13 +125,22 @@
       <option name="project" value="LOCAL" />
       <updated>1693788053658</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="IMAGES">
+      <option name="closed" value="true" />
+      <created>1693788503782</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693788503782</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="created a testPostDisplay.php page&#10;underway" />
     <MESSAGE value="feed and post working css added still in progress" />
     <MESSAGE value="weird things to prevent the breaking of phpstorm" />
@@ -135,6 +148,7 @@
     <MESSAGE value="Replaced postUpload.php's UI" />
     <MESSAGE value="Replaced postUpload.php's UI + index.php cleanup" />
     <MESSAGE value="Putting my center tags BACK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Putting my center tags BACK" />
+    <MESSAGE value="IMAGES" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMAGES" />
   </component>
 </project>
