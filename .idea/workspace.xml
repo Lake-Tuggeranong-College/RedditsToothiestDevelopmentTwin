@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Minor UI updates" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="adminEnablePost.php consistancy">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +79,7 @@
       <workItem from="1693181915653" duration="1495000" />
       <workItem from="1693357426313" duration="1972000" />
       <workItem from="1693786905577" duration="2087000" />
-      <workItem from="1693962335066" duration="324000" />
+      <workItem from="1693962335066" duration="1002000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -150,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693962608944</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="adminEnablePost.php consistancy">
+      <option name="closed" value="true" />
+      <created>1693962938543</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693962938543</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +179,7 @@
     <MESSAGE value="IMAGES" />
     <MESSAGE value="unsanitary image (not actually unsanitary)" />
     <MESSAGE value="Minor UI updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor UI updates" />
+    <MESSAGE value="adminEnablePost.php consistancy" />
+    <option name="LAST_COMMIT_MESSAGE" value="adminEnablePost.php consistancy" />
   </component>
 </project>
