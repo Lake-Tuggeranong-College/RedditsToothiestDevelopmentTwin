@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="IMAGES" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Minor UI updates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,27 +32,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/nate_abraham/Documents/GitHub/NJPHP2023",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nate_abraham/Documents/GitHub/NJPHP2023&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css" />
@@ -75,7 +75,8 @@
       <workItem from="1693181709096" duration="198000" />
       <workItem from="1693181915653" duration="1495000" />
       <workItem from="1693357426313" duration="1972000" />
-      <workItem from="1693786905577" duration="1697000" />
+      <workItem from="1693786905577" duration="2087000" />
+      <workItem from="1693962335066" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -133,7 +134,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693788503782</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="unsanitary image (not actually unsanitary)">
+      <option name="closed" value="true" />
+      <created>1693789098876</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693789098876</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Minor UI updates">
+      <option name="closed" value="true" />
+      <created>1693962608944</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693962608944</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +166,8 @@
     <MESSAGE value="Replaced postUpload.php's UI + index.php cleanup" />
     <MESSAGE value="Putting my center tags BACK" />
     <MESSAGE value="IMAGES" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMAGES" />
+    <MESSAGE value="unsanitary image (not actually unsanitary)" />
+    <MESSAGE value="Minor UI updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor UI updates" />
   </component>
 </project>

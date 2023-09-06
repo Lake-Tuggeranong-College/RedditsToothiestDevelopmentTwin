@@ -127,7 +127,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $_SESSION["flash_message"] = "Post Create!!";
         } else {
-
             $fileName = $_FILES['postImage']['name'];
             $fileTmpName = $_FILES['postImage']['tmp_name'];
             $fileSize = $_FILES['postImage']['size'];
@@ -137,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fileExtension = explode('.', $fileName);
             $fileActualExtension = strtolower(end($fileExtension));
 
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif');
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif', 'gif');
 
             if (in_array($fileActualExtension, $allowedExtensions)) {
                 if ($fileError === 0) {
