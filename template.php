@@ -60,10 +60,6 @@
                         <?php
                         $modAccessLevel = 2;
                         if (isset($_SESSION["username"])) {
-                        echo '
-                    <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
-                    
-                    ';
                         if (isset($_SESSION["access_level"])) {
                         if ($_SESSION["access_level"] == $modAccessLevel) {
 
