@@ -35,7 +35,7 @@ if (!authorisedAccess(false, false, true)) {
     <!--This script will list all the products to the admins and show edit and remove buttons to access productEdit.php and productRemove.php.-->
     <title>Contacted Messages</title>
 
-    <h1 class='text-primary'>Recieved Messages</h1>
+    <h1 class='text-primary'>Received Messages</h1>
 <?php
 $contactList = $conn->query("SELECT ID, username, message FROM contact");
 ?>
