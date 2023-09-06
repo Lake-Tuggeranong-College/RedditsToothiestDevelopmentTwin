@@ -9,7 +9,7 @@
 So, 1.5, 9, 1.5 or 1, 9, 2-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col-1">
             <div class="col bg-light p-1 border">
                 <p><u><b>
                             <center>Trending Communities</center>
