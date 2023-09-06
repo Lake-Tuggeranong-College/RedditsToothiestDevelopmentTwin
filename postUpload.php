@@ -40,7 +40,7 @@ if (!authorisedAccess(false, true, true)) {
 <title>Post Creation</title>
 <div>
     <div>
-        <h1>Create a Post</h1>
+        <h1 class="text-primary">Create a Post</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
               enctype="multipart/form-data">
             <!--Unsure about functionality. Placeholder for community tagging dropdown-->
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fileExtension = explode('.', $fileName);
             $fileActualExtension = strtolower(end($fileExtension));
 
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif');
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'webp', 'avif', 'heic', 'jfif', 'gif');
 
             if (in_array($fileActualExtension, $allowedExtensions)) {
                 if ($fileError === 0) {
