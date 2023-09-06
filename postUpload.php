@@ -1,10 +1,13 @@
 <?php
 include 'template.php';
 /** @var $conn */
+//access Level, if they are banned for none account, then bring them back to the home page
 if (!authorisedAccess(false, true, true)) {
     header("Location:index.php");
 }
 ?>
+<!--the UI around the main elament -->
+<!--Left side of the page-->
 <div class="container-fluid">
     <div class="row">
         <div class="col-1">
@@ -45,18 +48,19 @@ if (!authorisedAccess(false, true, true)) {
               enctype="multipart/form-data">
             <!--Unsure about functionality. Placeholder for community tagging dropdown-->
             <div class="mb-3">
+<!--                a breif about the post aka title-->
                 <label for="Posts" class="form-label">Title</label>
-<!--                <label for="Posts" class="form-label">Flairs</label> Other placeholder for flair tag dropdown-->
                 <input type="text" class="form-control" id="Title" name="Title" placeholder="Tell about the Post"
                        required="required">
             </div>
             <div class="mb-3">
+<!--                big body of text to explain more about the post-->
                 <label for="Posts" class="form-label">Description</label>
-<!--                <label for="Posts" class="form-label">Text Settings</label> <Other OTHER placeholder to have text settings-->
                 <textarea class="form-control" id="Description" name="Description" rows="3"
                           required="required"></textarea>
             </div>
             <div class="mb-3">
+<!--                add an image to upload on the post-->
                 <label for="postImage" class="form-label">Image</label>
                 <input type="file" id="postImage" name="postImage" class="form-control">
             </div>
@@ -67,6 +71,7 @@ if (!authorisedAccess(false, true, true)) {
                 </label>
             </div>
             <button type="button" name="PostDraftSave" class="btn btn-primary">Save Draft</button> <!--Save Draft button has no functionality-->
+<!--            the button to upload the post-->
             <button type="submit" name="PostSubmit" class="btn btn-primary">Post</button>
         </form>
     </div>
