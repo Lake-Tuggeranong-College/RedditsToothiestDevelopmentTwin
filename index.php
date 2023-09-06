@@ -9,7 +9,7 @@
 So, 1.5, 9, 1.5 or 1, 9, 2-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col-1">
             <div class="col bg-light p-1 border">
                 <p><u><b>
                             <center>Trending Communities</center>
@@ -92,7 +92,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                         $row=$stmt->fetch(PDO::FETCH_ASSOC);
                         if($stmt->rowCount()>0){
                             if(!empty($row['image'])){
-                                echo"<img class='img-fluid max-width: 10%' src='images/PostImages/".$row['image']."' alt='Post Image'>";
+                                echo"<img class='POSTIMG' src='images/PostImages/".$row['image']."' alt='Post Image'>";
                             }else{
                                 //nothing (there is no image)
                             }
