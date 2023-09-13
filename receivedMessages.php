@@ -1,43 +1,50 @@
 <?php include "template.php";
 /**  @var $conn */
-/**  @var $deletionid */
+/**  @var $readID */
+/**  @var $showIDis */
 isEnabled($conn);
-if (isset($_GET["deletionid"])) {
-    if($_SESSION["access_level"] == 3){
-        $deletionid = $_GET["deletionid"];
+if (isset($_GET["readID"])) {
+    if ($_SESSION["access_level"] == 3) {
+        $readID = $_GET["readID"];
     } else {
         header("Location:index.php");
     }
-    echo "Deletion ID found: $deletionid";
-    $stmt = $conn->prepare("SELECT username, message FROM contact WHERE ID = ?");
-    $stmt->bindParam(1, $deletionid);
+    echo "ReadID ID found: $readID";
+    $stmt = $conn->prepare("UPDATE contact SET Enabled = :read WHERE ID = :readID");
+    $stmt->bindParam(":read", $read);
+    $stmt->bindParam(":readID", $readID);
+    $read = 0;
     $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result) {
-        $username = $result['username'];
-        $message = $result['message'];
-        echo "Username: " . $username;
-        echo "Message: " . $message;
-        $stmt_delete = $conn->prepare("DELETE FROM contact WHERE ID = ?");
-        $stmt_delete->bindParam(1, $deletionid);
-        if ($stmt_delete->execute()) {
-            header("Location:receivedMessages.php");
-            echo "Entry deleted successfully.";
-        } else {
-            echo "Error deleting entry: " . $stmt_delete->errorInfo()[2];
-        }
-    }
+    header("Location:receivedMessages.php");
 }
-if (!authorisedAccess(false, false, true)) {
-    header("Location:index.php");
+if (isset($_GET["showID"])) {
+    if ($_SESSION["access_level"] == 3) {
+        $showID = $_GET["showID"];
+    } else {
+        header("Location:index.php");
+    }
+    if ($showID == 1) {
+        $contactList = $conn->query("SELECT ID, username, message, Enabled FROM contact WHERE Enabled = 0");
+        $showIDis = 0;
+        $buttontext = "Show Unread Messages";
+        $showReadButton = 0;
+    } else {
+        $contactList = $conn->query("SELECT ID, username, message, Enabled FROM contact WHERE Enabled = 1");
+        $showIDis = 1;
+        $buttontext = "Show Read Messages";
+        $showReadButton = 1;
+    }
+} else {
+    header("Location:receivedMessages.php?showID=0");
+    $contactList = $conn->query("SELECT ID, username, message, Enabled FROM contact WHERE Enabled = 1");
+    $showIDis = 1;
+    $buttontext = "Show Read Messages";
+    $showReadButton = 1;
 }
 ?>
-    <!--This script will list all the products to the admins and show edit and remove buttons to access productEdit.php and productRemove.php.-->
     <title>Contacted Messages</title>
-
     <h1 class='text-primary'>Received Messages</h1>
 <?php
-$contactList = $conn->query("SELECT ID, username, message FROM contact");
 ?>
 <?php
 // Check to see if User is Administrator (level 3)
@@ -49,24 +56,45 @@ if ($_SESSION['access_level'] == 3) {
         <?php
         while ($contactData = $contactList->fetch()) {
             ?>
-            <!-- Display each product as [Image] [ProductName] [Edit Link]-->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-1">
                     <?php echo $contactData["ID"]; ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <?php echo $contactData["username"]; ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <?php echo $contactData["message"]; ?>
                 </div>
-                <div class="col-md-2">
-                    <a href="receivedMessages.php?deletionid=<?php echo $contactData["ID"] ?>">Delete Message</a>
+                <div class="col-md-1">
+                    <?php
+
+                    if ($contactData["Enabled"] == 1)
+                        echo "Unread";
+                    if ($contactData["Enabled"] == 0)
+                        echo "Read"; ?>
                 </div>
+                <?php
+                if ($showReadButton == 1) {
+                    ?>
+                    <div class="col-md-1">
+                        <a class="btn btn-secondary" href="receivedMessages.php?readID=<?php echo $contactData["ID"] ?>"
+                           role="button">Mark as Read</a>
+                    </div>
+                <?php
+                } else {
+                    // Nothing
+                }
+                ?>
             </div>
+
             <?php
         }
         ?>
+        <div class="col-md-2">
+            <a class="btn btn-secondary" href="receivedMessages.php?showID=<?php echo $showIDis; ?>"
+               role="button"><?php echo $buttontext ?></a>
+        </div>
     </div>
 
     <?php
