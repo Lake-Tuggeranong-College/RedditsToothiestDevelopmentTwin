@@ -55,7 +55,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             }
 
 
-            $modAccessLevel = 2;
+            $userLevel = 1;
             $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID  FROM Posts WHERE Enabled = 0 ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage");
 
             ?>
@@ -82,7 +82,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
                     <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
                     <div class="POSTFOOTER">
-                        <?php if ($_SESSION["access_level"] >= $modAccessLevel) {
+                        <?php if ($_SESSION["access_level"] > $userLevel) {
                             ?>
                             <form action="adminEnablePost.php?EnableID=<?=$postData['ID']?>"  method="post">
                                 <button type="submit" class="btn btn-outline-success">Enable</button>
