@@ -1,6 +1,7 @@
 .POST {
     border-radius: 25px;
-    height: 500px;
+    min-height: 500px;
+    max-width: 90%;
     background-color: #eff0f1;
     margin: 25px;
     border: #5c636a;
@@ -8,9 +9,22 @@
 }
 
 .POSTTITLE {
-    padding-left: 15px;
     padding-top: 10px;
     height: 10%;
+}
+
+.POSTTITLE h4 {
+    display: inline;
+    color: #567FC8;
+    padding-right: 10px;
+    text-decoration: underline;
+}
+
+
+.POSTTITLE h1 {
+    padding-left: 15px;
+    display: inline;
+
 }
 
 .POSTBODY {
