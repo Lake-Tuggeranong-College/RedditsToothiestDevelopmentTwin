@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Little changes. Still probably not working" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="uncommended the sidebar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +77,7 @@
       <workItem from="1693357426313" duration="1972000" />
       <workItem from="1693786905577" duration="2087000" />
       <workItem from="1693962335066" duration="324000" />
+      <workItem from="1694567180331" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -166,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693965288065</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="uncommended the sidebar">
+      <option name="closed" value="true" />
+      <created>1694567423142</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694567423142</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +206,7 @@
     <MESSAGE value="Minor UI updates" />
     <MESSAGE value="shoddy attempt at communityUpload.php, it does not work" />
     <MESSAGE value="Little changes. Still probably not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes. Still probably not working" />
+    <MESSAGE value="uncommended the sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="uncommended the sidebar" />
   </component>
 </project>
