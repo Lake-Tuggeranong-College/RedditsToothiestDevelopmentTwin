@@ -3,7 +3,6 @@
 /**  @var $conn */
 //test
 ?>
-<link rel="stylesheet" href="css/style.css">
 <body>
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
 15%, 70%, 15% or 10%, 70%, 20%
@@ -133,7 +132,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
 //           start of pagination
 
-            if ($page >= 2) {
+            if ($page > 1) {
                 ?>
                 <form action="index.php?page=<?= $page - 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger">Previous Page</button>
