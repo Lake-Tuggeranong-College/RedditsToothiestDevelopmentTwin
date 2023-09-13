@@ -21,16 +21,17 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                             $postData[1];
                         }
                         ?></li>
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
+                    <li>Community</li>
+                    <li>Community</li>
+                    <li>Community</li>
+                    <li>Community</li>
+                    <li>Community</li>
+                    <li>Community</li>
+                    <li>Community</li>
+                    <li>Community</li>
                 </ul>
                 <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
+<!--                Had to uncomment the list, it breaks the page.-->
             </div>
             <div class="col bg-light p-1 border">
                 <p><u><b>
