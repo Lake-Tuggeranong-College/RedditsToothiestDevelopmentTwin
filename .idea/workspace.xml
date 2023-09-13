@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Minor UI updates" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="new image" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +77,7 @@
       <workItem from="1693357426313" duration="1972000" />
       <workItem from="1693786905577" duration="2087000" />
       <workItem from="1693962335066" duration="324000" />
+      <workItem from="1694567180331" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -150,11 +151,54 @@
       <option name="project" value="LOCAL" />
       <updated>1693962608944</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="shoddy attempt at communityUpload.php, it does not work">
+      <option name="closed" value="true" />
+      <created>1693965005600</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693965005600</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Little changes. Still probably not working">
+      <option name="closed" value="true" />
+      <created>1693965288065</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693965288065</updated>
+    </task>
+    <task id="LOCAL-00012" summary="uncommended the sidebar">
+      <option name="closed" value="true" />
+      <created>1694567423142</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694567423142</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new image">
+      <option name="closed" value="true" />
+      <created>1694567661962</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1694567661962</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -168,6 +212,10 @@
     <MESSAGE value="IMAGES" />
     <MESSAGE value="unsanitary image (not actually unsanitary)" />
     <MESSAGE value="Minor UI updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor UI updates" />
+    <MESSAGE value="shoddy attempt at communityUpload.php, it does not work" />
+    <MESSAGE value="Little changes. Still probably not working" />
+    <MESSAGE value="uncommended the sidebar" />
+    <MESSAGE value="new image" />
+    <option name="LAST_COMMIT_MESSAGE" value="new image" />
   </component>
 </project>
