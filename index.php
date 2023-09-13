@@ -177,7 +177,6 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             }
 
             ?>
-
         </div>
         <div class="col">
             <div class="col bg-light p-2 border">
