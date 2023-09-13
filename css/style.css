@@ -8,9 +8,25 @@
 }
 
 .POSTTITLE {
-    padding-left: 15px;
     padding-top: 10px;
-    height: 10%;
+    height: 50px;
+}
+
+.POSTTITLE h4 {
+    display: inline;
+    color: #567FC8;
+    padding-right: 35px;
+    padding-top: 15px;
+    text-decoration: underline;
+    float: right;
+
+}
+
+
+.POSTTITLE h1 {
+    padding-left: 15px;
+    display: inline;
+
 }
 
 .POSTBODY {
