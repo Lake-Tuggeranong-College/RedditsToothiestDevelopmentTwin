@@ -1,8 +1,5 @@
 <?php require_once 'config.php';
 
-if (!authorisedAccess(false, false, true)) {
-    header("Location:index.php");
-}
 ?>
 
 
