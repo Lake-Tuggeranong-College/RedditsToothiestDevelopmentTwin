@@ -1,6 +1,5 @@
 .POST {
     border-radius: 25px;
-    height: 500px;
     background-color: #eff0f1;
     margin: 25px;
     border: #5c636a;
@@ -9,7 +8,7 @@
 
 .POSTTITLE {
     padding-top: 10px;
-    height: 50px;
+    min-height: 50px;
 }
 
 .POSTTITLE h4 {
@@ -19,9 +18,8 @@
     padding-top: 15px;
     text-decoration: underline;
     float: right;
-
+    position: relative;
 }
-
 
 .POSTTITLE h1 {
     padding-left: 15px;
@@ -31,15 +29,21 @@
 
 .POSTBODY {
     padding-left: 15px;
-    height: 70%;
+    min-height: 70%;
+    min-height: 450px;
 }
-.POSTFOOTER{
-padding-left: 15px;
+
+.POSTFOOTER {
+    min-height: 50px;
+}
+.POSTFOOTER button {
+    margin: 10px;
 }
 
 .COMMUNITY {
     text-align: justify;
 }
+
 .POSTIMG {
     max-width: 100%;
     max-height: 90%;

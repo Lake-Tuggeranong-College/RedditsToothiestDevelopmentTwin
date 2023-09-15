@@ -21,14 +21,14 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                             $postData[1];
                         }
                         ?></li>
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
-<!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
+                    <!--                    <li>Community</li>-->
                 </ul>
                 <!-- Tested around with making columns inside these containers. Nothing I tried (admittedly not a lot) worked -->
             </div>
@@ -88,8 +88,12 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <div class="POSTTITLE">
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
                         <?php echo '<h4>' . $userData[0] . '</h4>'; ?>
+
+                        <br>
+                        <br>
+                        <hr>
                     </div>
-                    <hr>
+
                     <!--    this is the div that will display the contents of the body of the post-->
                     <div class="POSTBODY">
                         <?php echo $postData[0] . '<br>';
@@ -115,6 +119,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
                     <!--    this it the div that will display the contents of the footer of the post eg. the up-votes and down-votes-->
                     <div class="POSTFOOTER">
+                        <hr>
                         <?php if (isset($_SESSION["access_level"])) {
                             if ($_SESSION["access_level"] == $modAccessLevel) {
                                 ?>
@@ -129,10 +134,38 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             <?php }
 
 
-//           start of pagination
+
+            //           start of pagination
 
             if ($page > 1) {
                 ?>
+                <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_GET["DisableID"])) {
+                    $postID = $_GET["DisableID"];
+                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Disabled";
+                    header("Location:index.php");
+                }
+            }
+
+            ?>
+
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_GET["DisableID"])) {
+                    $postID = $_GET["DisableID"];
+                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $_SESSION["flash_message"] = "Post Disabled";
+                    header("Location:index.php");
+                }
+            }
+
+            ?>
                 <form action="index.php?page=<?= $page - 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger">Previous Page</button>
                 </form>
@@ -141,7 +174,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
-            if ($numberOfPosts > $PostDisplayed){
+            if ($numberOfPosts > $PostDisplayed) {
                 ?>
                 <form action="index.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>
@@ -149,33 +182,6 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             <?php } ?>
 
 
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_GET["DisableID"])) {
-                    $postID = $_GET["DisableID"];
-                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $_SESSION["flash_message"] = "Post Disabled";
-                    header("Location:index.php");
-                }
-            }
-
-            ?>
-
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_GET["DisableID"])) {
-                    $postID = $_GET["DisableID"];
-                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $_SESSION["flash_message"] = "Post Disabled";
-                    header("Location:index.php");
-                }
-            }
-
-            ?>
 
         </div>
         <div class="col">
