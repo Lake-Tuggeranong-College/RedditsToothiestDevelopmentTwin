@@ -1,6 +1,10 @@
 <title>Index</title>
 <?php include "template.php";
 /**  @var $conn */
+
+if (!authorisedAccess(false, false, true)) {
+    header("Location:index.php");
+}
 ?>
 <link rel="stylesheet" href="css/style.css">
 <body>
