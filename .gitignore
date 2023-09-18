@@ -14,3 +14,4 @@
 
 #PHPStorm Configuration Files
 .idea/*
+.idea/workspace.xml
