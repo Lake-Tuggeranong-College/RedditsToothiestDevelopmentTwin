@@ -98,16 +98,8 @@ if (!authorisedAccess(false, true, true)) {
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $description = sanitise_data($_POST['description']);
-//    $Author = 'h';
             $title = sanitise_data($_POST['title']);
-//    $DownVotes = 'h';
-//    $UpVotes = 'h';
-//    $Enabled = 'h';
-            // defining what type of file is allowed
-            // We separate the file, and obtain the file extension.
 
-            //$username;
-            //$hashed_password;
             if (strlen($description) >= 1024) {
                 echo 'You cant have the Description bigger then 1024 charaters';
             } else if (strlen($title) >= 100) {
