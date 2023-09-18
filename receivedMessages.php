@@ -24,19 +24,19 @@ if (isset($_GET["showID"])) {
         header("Location:index.php");
     }
     if ($showID == 1) {
-        $contactList = $conn->query("SELECT ID, username, message, Enabled FROM contact WHERE Enabled = 0");
+        $contactList = $conn->query("SELECT ID, username, message, Enabled, subject FROM contact WHERE Enabled = 0");
         $showIDis = 0;
         $buttontext = "Show Unread Messages";
         $showReadButton = 0;
     } else {
-        $contactList = $conn->query("SELECT ID, username, message, Enabled FROM contact WHERE Enabled = 1");
+        $contactList = $conn->query("SELECT ID, username, message, Enabled, subject FROM contact WHERE Enabled = 1");
         $showIDis = 1;
         $buttontext = "Show Read Messages";
         $showReadButton = 1;
     }
 } else {
     header("Location:receivedMessages.php?showID=0");
-    $contactList = $conn->query("SELECT ID, username, message, Enabled FROM contact WHERE Enabled = 1");
+    $contactList = $conn->query("SELECT ID, username, message, Enabled, subject FROM contact WHERE Enabled = 1");
     $showIDis = 1;
     $buttontext = "Show Read Messages";
     $showReadButton = 1;
@@ -74,6 +74,20 @@ if ($_SESSION['access_level'] == 3) {
                     if ($contactData["Enabled"] == 0)
                         echo "Read"; ?>
                 </div>
+                <div class="col-md-1">
+                    <?php
+                    if ($contactData["subject"] == 1)
+                        echo "General Question";
+                    if ($contactData["subject"] == 2)
+                        echo "Disabled Account";
+                    if ($contactData["subject"] == 3)
+                        echo "Forgot Password";
+                    if ($contactData["subject"] == 4)
+                        echo "Site Bugs / Issues";
+                    if ($contactData["subject"] == 5)
+                        echo "Other"; ?>
+
+                </div>
                 <?php
                 if ($showReadButton == 1) {
                     ?>
@@ -81,7 +95,7 @@ if ($_SESSION['access_level'] == 3) {
                         <a class="btn btn-secondary" href="receivedMessages.php?readID=<?php echo $contactData["ID"] ?>"
                            role="button">Mark as Read</a>
                     </div>
-                <?php
+                    <?php
                 } else {
                     // Nothing
                 }
