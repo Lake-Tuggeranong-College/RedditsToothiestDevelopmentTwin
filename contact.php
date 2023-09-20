@@ -1,8 +1,8 @@
 <?php include "template.php";
 /** @var $conn */
-isEnabled($conn);
-if (!authorisedAccess(false, true, true)) {
-    header("Location:index.php");
+$username = $_SESSION["username"];
+if(empty($username)){
+    $username = "UserNotLoggedIn";
 }
 ?>
     <!--Contact.php-->
@@ -19,7 +19,7 @@ if (!authorisedAccess(false, true, true)) {
         <div class="mb-3">
             <label for="contactUsername" class="form-label">Username</label>
             <input type="text" class="form-control" id="contactUsername" name="contactUsername"
-                   readonly value="<?php echo $_SESSION["username"] ?>">
+                   readonly value="<?php echo $username ?>">
         </div>
 <!--        <div class="mb-3">-->
 <!--            <label for="contactEmail" class="form-label">Email Address</label>-->
@@ -29,20 +29,30 @@ if (!authorisedAccess(false, true, true)) {
         <div class="mb-3">
             <label for="contactMessage" class="form-label">Message</label>
             <textarea class="form-control" id="contactMessage" name="contactMessage" rows="4"></textarea>
+            <br>
+            <label for="subject">Message Subject: </label>
+            <select name="subject" id="subject">
+                <optgroup label="Select Option">
+                    <option value="1">General Question</option>
+                    <option value="2">Disabled Account</option>
+                    <option value="3">Forgot Password</option>
+                    <option value="4">Site Bugs / Issues</option>
+                    <option value="5">Other</option>
+                </optgroup>
+            </select>
         </div>
         <button type="submit" name="formSubmit" class="btn btn-primary">Send</button>
     </form>
 </div>
-
 <?php
 if (isset($_POST['formSubmit'])){
-    $contactUsername = $_SESSION["username"];
     $contactMessage = sanitise_data($_POST['contactMessage']);
+    $subject = sanitise_data($_POST['subject']);
 
     $formError = false;
     if (empty($_POST['contactUsername'])) {
         $formError = true;
-        echo "Username not logged in..\n";
+        echo "User not logged in.\n";
     }
     if (empty($_POST['contactMessage'])) {
         $formError = true;
@@ -51,11 +61,16 @@ if (isset($_POST['formSubmit'])){
     if ($formError == false) {
         $emailAddress = $_POST['contactUsername'];
         $messageSubmitted = $_POST['contactMessage'];
-        $query = "INSERT INTO contact (username, message) VALUES (:contactUsername, :contactMessage)";
+        $subject = $_POST['subject'];
+        if($subject>5) {
+            $subject = 5;
+        }
+        $query = "INSERT INTO contact (username, message, subject) VALUES (:contactUsername, :contactMessage, :subject)";
 
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(':contactUsername', $contactUsername);
+        $stmt->bindParam(':contactUsername', $username);
         $stmt->bindParam(':contactMessage', $contactMessage);
+        $stmt->bindParam(':subject', $subject);
         $stmt->execute();
         $conn = null;
     }

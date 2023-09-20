@@ -1,3 +1,4 @@
+/*edits the layout of the post*/
 .POST {
     border-radius: 25px;
     background-color: #eff0f1;
@@ -5,7 +6,7 @@
     border: #5c636a;
     border-width: 5px;
 }
-
+/*sets the padding and hight of the tittle of the post*/
 .POSTTITLE {
     padding-top: 10px;
     min-height: 50px;

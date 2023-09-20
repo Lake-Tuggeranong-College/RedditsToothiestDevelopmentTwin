@@ -86,6 +86,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
                     <!--    this is the div that will display the title and other things displayed in the headnote-->
                     <div class="POSTTITLE">
+
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
                         <?php echo '<h4>' . $userData[0] . '</h4>'; ?>
 
@@ -128,6 +129,17 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                                 </form>
                             <?php }
                         }
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            if (isset($_GET["DisableID"])) {
+                                $postID = $_GET["DisableID"];
+                                $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
+                                $stmt = $conn->prepare($sql);
+                                $stmt->execute();
+                                $_SESSION["flash_message"] = "Post Disabled";
+                                header("Location:index.php");
+                            }
+                        }
+
                         ?>
                     </div>
                 </div>
@@ -140,32 +152,9 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             if ($page > 1) {
                 ?>
                 <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_GET["DisableID"])) {
-                    $postID = $_GET["DisableID"];
-                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $_SESSION["flash_message"] = "Post Disabled";
-                    header("Location:index.php");
-                }
-            }
 
             ?>
 
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_GET["DisableID"])) {
-                    $postID = $_GET["DisableID"];
-                    $sql = "UPDATE Posts SET Enabled = 0 WHERE ID ='$postID'";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $_SESSION["flash_message"] = "Post Disabled";
-                    header("Location:index.php");
-                }
-            }
-
-            ?>
                 <form action="index.php?page=<?= $page - 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger">Previous Page</button>
                 </form>
