@@ -46,7 +46,7 @@ if (!authorisedAccess(false, true, true)) {
             <div>
                 <div>
                     <h1 class="text-primary">Create a Community</h1>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="communities"
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
                           enctype="multipart/form-data">
                         <!--Unsure about functionality. Placeholder for community tagging dropdown-->
                         <div class="mb-3">
@@ -97,25 +97,19 @@ if (!authorisedAccess(false, true, true)) {
         </div>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $userID = $_SESSION['user_id'];
             $description = sanitise_data($_POST['description']);
-//    $Author = 'h';
             $title = sanitise_data($_POST['title']);
-//    $DownVotes = 'h';
-//    $UpVotes = 'h';
-//    $Enabled = 'h';
-            // defining what type of file is allowed
-            // We separate the file, and obtain the file extension.
 
-            //$username;
-            //$hashed_password;
             if (strlen($description) >= 1024) {
                 echo 'You cant have the Description bigger then 1024 charaters';
             } else if (strlen($title) >= 100) {
                 echo 'You cant have the Title bigger then 100 charaters';
             } else {
-                $sql = "INSERT INTO Communities (title, description,) VALUES ( :title, :description)";
+                $sql = "INSERT INTO Communities (title, description, owner) VALUES ( :title, :description, :owner)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindValue(':title', $title);
+                $stmt->bindValue(':owner', $userID);
                 $stmt->bindValue(':description', $description);
                 $stmt->execute();
                 $_SESSION["flash_message"] = "Community Create!!";
