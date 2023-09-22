@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="template fixing the css">
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="Single image">
+      <change afterPath="$PROJECT_DIR$/images/PostImages/IMG-650d1998f30a45.38409947.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,7 @@
       <workItem from="1693786905577" duration="2087000" />
       <workItem from="1693962335066" duration="324000" />
       <workItem from="1694567180331" duration="3149000" />
-      <workItem from="1695354814197" duration="809000" />
+      <workItem from="1695354814197" duration="1481000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -202,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694569751553</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Single image">
+      <option name="closed" value="true" />
+      <created>1695357724251</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695357724251</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +246,7 @@
     <MESSAGE value="new image" />
     <MESSAGE value="index.php minor change" />
     <MESSAGE value="template fixing the css" />
-    <option name="LAST_COMMIT_MESSAGE" value="template fixing the css" />
+    <MESSAGE value="Single image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Single image" />
   </component>
 </project>
