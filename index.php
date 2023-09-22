@@ -1,7 +1,6 @@
 <title>Index</title>
 <?php include "template.php";
 /**  @var $conn */
-//test
 ?>
 <body>
 <!--https://getbootstrap.com/docs/5.0/layout/containers/
@@ -15,12 +14,12 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                             <center>Trending Communities</center>
                         </b></u></p>
                 <ul>
-                    <li><?php
+                    <?php
                         $CommunityDetails = $conn->query("SELECT id, Title FROM Communities LIMIT 10");
                         while ($postData = $CommunityDetails->fetch()) {
-                            $postData[1];
+                            ?><li><a href="communityPosts.php?community=<?=$postData[0]?>"><?= $postData[1];?></a></li><?php
                         }
-                        ?></li>
+                        ?>
                     <!--                    <li>Community</li>-->
                     <!--                    <li>Community</li>-->
                     <!--                    <li>Community</li>-->
