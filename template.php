@@ -37,6 +37,7 @@
                 if (isset($_SESSION["username"])) {
                     echo '
                     <li class="nav-item"><a class="nav-link" href="postUpload.php">Make Post</a></li>
+                    <li class="nav-item"><a class="nav-link" href="communityUpload.php">Make Community</a></li>
                     
                     ';
                     if (isset($_SESSION["access_level"])) {
