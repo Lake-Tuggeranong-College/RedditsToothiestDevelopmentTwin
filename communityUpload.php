@@ -100,16 +100,19 @@ if (!authorisedAccess(false, true, true)) {
             $userID = $_SESSION['user_id'];
             $description = sanitise_data($_POST['description']);
             $title = sanitise_data($_POST['title']);
+            date_default_timezone_set('Australia/Canberra');
+            $DateTime = date('Y-m-d H:i:s');
 
             if (strlen($description) >= 1024) {
                 echo 'You cant have the Description bigger then 1024 charaters';
             } else if (strlen($title) >= 100) {
                 echo 'You cant have the Title bigger then 100 charaters';
             } else {
-                $sql = "INSERT INTO Communities (title, description, owner) VALUES ( :title, :description, :owner)";
+                $sql = "INSERT INTO Communities (title, description, owner, DateTime) VALUES ( :title, :description, :owner, :DateTime)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindValue(':title', $title);
                 $stmt->bindValue(':owner', $userID);
+                $stmt->bindValue(':DateTime', $DateTime);
                 $stmt->bindValue(':description', $description);
                 $stmt->execute();
                 $_SESSION["flash_message"] = "Community Create!!";
