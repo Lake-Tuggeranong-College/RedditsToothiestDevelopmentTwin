@@ -76,6 +76,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             while ($postData = $postDetails->fetch()) {
 //    print_r($postData);
 
+                //   getting the username of the user who made the post
                 $userInfo = $conn->query("SELECT Username FROM Users WHERE UserID = $postData[UserID]");
                 $userData = $userInfo->fetch();
                 ?>
