@@ -94,7 +94,7 @@ if (isset ($_GET['community'])) {
                     <div class="POSTTITLE">
 
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
-                        <a href="userProfile.php?viewprofile=<?=$userData[0]?>"><h4><?=$userData[0]?></h4></a>
+                        <a href="userEditProfile.php?viewprofile=<?=$userData[0]?>"><h4><?=$userData[0]?></h4></a>
 
                         <br>
                         <br>

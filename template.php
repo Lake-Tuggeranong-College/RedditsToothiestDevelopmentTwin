@@ -82,10 +82,7 @@
                     }
                 } else {
                     echo '
-                    <li class="nav-item"><a class="nav-link" href="userRegister.php">Register</a></li>
-                    ';
-                    echo '
-                    <li class="nav-item"><a class="nav-link" href="userLogin.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userLoginRegisterTest.php">Login/Register</a></li>
                     ';
 
 
