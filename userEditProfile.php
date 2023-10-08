@@ -1,7 +1,7 @@
 <?php include "template.php";
 /** @var $conn */
-
-if (!authorisedAccess(false, false, true)) {
+isEnabled($conn);
+if (!authorisedAccess(false, true, true)) {
     header("Location:index.php");
 }
 if (isset($_GET["UserID"])) {
@@ -14,44 +14,50 @@ if (isset($_GET["UserID"])) {
 } else {
     $userid = $_SESSION["user_id"] ;
 }
+$query = $conn->query("SELECT * FROM Users WHERE UserID='$userid'");
+$userData = $query->fetch();
+$userName = $userData["Username"];
+$hashedPassword = $userData["HashedPassword"];
+$userAccessLevel = $userData["AccessLevel"];
+$userEnabled = $userData["enabled"];
+
 ?>
 
-<title>Admin Reset Password</title>
 
-<h1 class='text-primary'>Reset Password</h1>
+<title>Edit Profile</title>
+
+<h1 class='text-primary'>Edit your profile</h1>
 <form action="userEditProfile.php?UserID=<?=$userid?>" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
-        <div class="row">
             <div class="col-md-12">
-                <h2>Account Details</h2>
-                <p>Please enter new password:</p>
+
 
                 <p>Password<input type="password" name="password" class="form-control" required="required"></p>
 
             </div>
+    </div>
         </div>
     </div>
     <input type="submit" name="formSubmit" value="Submit">
 </form>
 
-
-
 <?php
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
 
     $password = sanitise_data($_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $accessLevel = 1;
     //$hashed_password;
 
-
-    $sql = "UPDATE Users SET HashedPassword = :newPassword WHERE UserID='$userid'";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindValue(':newPassword', $hashed_password);
-    $stmt->execute();
-    $_SESSION["flash_message"] = "Password Reset!";
-    header("Location:index.php");
+        $sql = "UPDATE Users SET HashedPassword = :newPassword WHERE UserID='$userid'";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':newPassword', $hashed_password);
+        $stmt->execute();
+        $_SESSION["flash_message"] = "Password Reset!";
+        header("Location:userLogout.php");
 
 
 }
