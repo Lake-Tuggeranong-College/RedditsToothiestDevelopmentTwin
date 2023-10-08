@@ -139,6 +139,11 @@ if (isset($_SESSION['flash_message'])) {
 <script src="js/bootstrap.bundle.js"></script>
 <?php
 function sanitise_data($data)
+    /*
+     * 'Cleans' the data to prevent SQL injection attacks. This is a very simple function, and should be improved.
+     * @param $data - the data to be sanitised
+     * @return the sanitised data
+     */
 {
     $data = trim($data);
     $data = stripslashes($data);
