@@ -11,11 +11,11 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
         <div class="col-1">
             <div class="col bg-light p-1 border">
                 <p><u><b>
-                            <center>Trending Communities</center>
+                            <center>New Communities</center>
                         </b></u></p>
                 <ul>
                     <?php
-                        $CommunityDetails = $conn->query("SELECT id, Title FROM Communities LIMIT 10");
+                        $CommunityDetails = $conn->query("SELECT id, Title FROM Communities ORDER BY id DESC LIMIT 10");
                         while ($postData = $CommunityDetails->fetch()) {
                             ?><li><a href="communityPosts.php?community=<?=$postData[0]?>"><?= $postData[1];?></a></li><?php
                         }
