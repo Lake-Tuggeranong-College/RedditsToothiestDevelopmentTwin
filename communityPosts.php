@@ -24,7 +24,7 @@ if (isset ($_GET['community'])) {
                     <?php
                     $CommunityDetails = $conn->query("SELECT id, Title FROM Communities LIMIT 10");
                     while ($postData = $CommunityDetails->fetch()) {
-                        ?><li><a href="communityPosts.php?community=<?=$postData[0]?>"><?= $postData[1];?></a></li><?php
+                        ?><li><a href="communityPosts.php?viewCommunity=<?=$postData[0]?>"><?= $postData[1];?></a></li><?php
                     }
                     ?>
                     <!--                    <li>Community</li>-->
@@ -74,10 +74,27 @@ if (isset ($_GET['community'])) {
             //    echo $postsPerPage;
             //    echo $postNumStart;
             $modAccessLevel = 2;
-            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID, UserID FROM Posts WHERE Enabled = 1 AND community = $community ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
+
+            //geting the logistics of what community you are vewing.
+            if (isset ($_GET['viewCommunity'])) {
+                $viewCommunity = $_GET['viewCommunity'];
+                //setting a viewCommunity session so pagination will worke.
+                $_SESSION["viewCommunity"] = $viewCommunity;
+                // setting viewCommunity ass the session so pagination will worke.
+            }elseif (isset($_SESSION["viewCommunity"])) {
+                $viewCommunity = $_SESSION['viewCommunity'];
+
+            }
+
+            //colleting the community name for the title
+            $commInfo = $conn->query("SELECT title FROM Communities WHERE id = $viewCommunity");
+            $commData = $commInfo->fetch();
+
+            $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID, UserID FROM Posts WHERE Enabled = 1 AND community = $viewCommunity ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
             //print_r($page);
             ?>
 
+            <h1>you are currently viewing the <u><?=$commData[0]?>:</u> community</h1>
 
             <?php
             while ($postData = $postDetails->fetch()) {
@@ -94,7 +111,7 @@ if (isset ($_GET['community'])) {
                     <div class="POSTTITLE">
 
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
-                        <a href="userEditProfile.php?viewprofile=<?=$userData[0]?>"><h4><?=$userData[0]?></h4></a>
+                        <a href="userProfile.php?viewProfile=<?=$postData[4]?>"><h4><?=$userData[0]?></h4></a>
 
                         <br>
                         <br>
@@ -130,14 +147,14 @@ if (isset ($_GET['community'])) {
                         <?php if (isset($_SESSION["access_level"])) {
                             if ($_SESSION["access_level"] == $modAccessLevel) {
                                 ?>
-                                <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
+                                <form action="communityPosts.php?DisableID=<?= $postData['ID'] ?>" method="post">
                                     <button type="submit" class="btn btn-outline-danger">Disable</button>
                                 </form>
                                 <?php
                             } else {
                                 if($_SESSION["access_level"] == 3){
                                     ?>
-                                    <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
+                                    <form action="communityPosts.php?DisableID=<?= $postData['ID'] ?>" method="post">
                                         <button type="submit" class="btn btn-outline-danger">Disable</button>
                                     </form>
                                     <?php
@@ -151,7 +168,7 @@ if (isset ($_GET['community'])) {
                                 $stmt = $conn->prepare($sql);
                                 $stmt->execute();
                                 $_SESSION["flash_message"] = "Post Disabled";
-                                header("Location:index.php");
+                                header("communityPosts:index.php");
                             }
                         }
 
@@ -170,17 +187,17 @@ if (isset ($_GET['community'])) {
 
                 ?>
 
-                <form action="index.php?page=<?= $page - 1 ?>" method="post">
+                <form action="communityPosts.php?page=<?= $page - 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger">Previous Page</button>
                 </form>
             <?php }
-            $info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 1");
+            $info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 1 AND community = $viewCommunity");
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
             if ($numberOfPosts > $PostDisplayed) {
                 ?>
-                <form action="index.php?page=<?= $page + 1 ?>" method="post">
+                <form action="communityPosts.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>
                 </form>
             <?php } ?>
