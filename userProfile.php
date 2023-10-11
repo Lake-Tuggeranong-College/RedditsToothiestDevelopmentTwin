@@ -68,10 +68,15 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
             //    echo $postNumStart;
             $modAccessLevel = 2;
 
-            //geting the logistics of who the user you are vewing is
+            //geting the logistics of who the user you are vewing is.
             if (isset ($_GET['viewProfile'])) {
                 $viewProfile = $_GET['viewProfile'];
+                //setting a view profile session so pagination will worke.
                 $_SESSION["viewProfile"] = $viewProfile;
+                // setting viewProfile ass the session so pagination will worke.
+            }elseif (isset($_SESSION["viewProfile"])) {
+                $viewProfile = $_SESSION['viewProfile'];
+
             }
 
             $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID, UserID FROM Posts WHERE Enabled = 1 AND UserID = $viewProfile ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
@@ -94,7 +99,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <div class="POSTTITLE">
 
                         <?php echo '<h1>' . $postData[1] . '</h1>'; ?>
-                        <a href="userEditProfile.php?viewprofile=<?=$userData[0]?>"><h4><?=$userData[0]?></h4></a>
+                        <a href="userProfile.php?viewprofile=<?=$userData[0]?>"><h4><?=$userData[0]?></h4></a>
 
                         <br>
                         <br>
@@ -130,14 +135,14 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                         <?php if (isset($_SESSION["access_level"])) {
                             if ($_SESSION["access_level"] == $modAccessLevel) {
                                 ?>
-                                <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
+                                <form action="userProfile.php?DisableID=<?= $postData['ID'] ?>" method="post">
                                     <button type="submit" class="btn btn-outline-danger">Disable</button>
                                 </form>
                                 <?php
                             } else {
                                 if($_SESSION["access_level"] == 3){
                                     ?>
-                                    <form action="index.php?DisableID=<?= $postData['ID'] ?>" method="post">
+                                    <form action="userProfile.php?DisableID=<?= $postData['ID'] ?>" method="post">
                                         <button type="submit" class="btn btn-outline-danger">Disable</button>
                                     </form>
                                     <?php
@@ -151,7 +156,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                                 $stmt = $conn->prepare($sql);
                                 $stmt->execute();
                                 $_SESSION["flash_message"] = "Post Disabled";
-                                header("Location:index.php");
+                                header("Location:userProfile.php");
                             }
                         }
 
@@ -170,17 +175,17 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
                 ?>
 
-                <form action="index.php?page=<?= $page - 1 ?>" method="post">
+                <form action="userProfile.php?page=<?= $page - 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger">Previous Page</button>
                 </form>
             <?php }
-            $info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 1");
+            $info = $conn->query("SELECT COUNT(*) FROM Posts WHERE Enabled = 1 AND UserID = $viewProfile");
             $data = $info->fetch();
             $numberOfPosts = (int)$data[0];
             $PostDisplayed = $page * $postsPerPage;
             if ($numberOfPosts > $PostDisplayed) {
                 ?>
-                <form action="index.php?page=<?= $page + 1 ?>" method="post">
+                <form action="userProfile.php?page=<?= $page + 1 ?>" method="post">
                     <button type="submit" class="btn btn-outline-success">Next Page</button>
                 </form>
             <?php } ?>
