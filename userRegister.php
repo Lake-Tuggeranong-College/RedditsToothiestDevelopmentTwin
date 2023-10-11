@@ -42,7 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = $query->fetch();
     $numberOfUsers = (int)$data[0];
 
-    if ($numberOfUsers > 0) {
+    if(strlen($username) >= 32) {
+        echo 'you can not have a name bigger the 32';
+    } else if ($numberOfUsers > 0) {
         echo "This username has already been taken.";
     } else {
         $sql = "INSERT INTO Users (Username, HashedPassword, AccessLevel, Enabled) VALUES (:newUsername, :newPassword, :newAccessLevel, 1)";
