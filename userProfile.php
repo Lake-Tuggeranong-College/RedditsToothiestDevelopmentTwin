@@ -17,7 +17,7 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
                     <?php
                     $CommunityDetails = $conn->query("SELECT id, Title FROM Communities LIMIT 10");
                     while ($postData = $CommunityDetails->fetch()) {
-                        ?><li><a href="communityPosts.php?community=<?=$postData[0]?>"><?= $postData[1];?></a></li><?php
+                        ?><li><a href="communityPosts.php?viewCommunity=<?=$postData[0]?>"><?= $postData[1];?></a></li><?php
                     }
                     ?>
                     <!--                    <li>Community</li>-->
@@ -79,10 +79,14 @@ So, 1.5, 9, 1.5 or 1, 9, 2-->
 
             }
 
+            //colleting the username for the title
+            $userInfo = $conn->query("SELECT Username FROM Users WHERE UserID = $viewProfile");
+            $userData = $userInfo->fetch();
+
             $postDetails = $conn->query("SELECT BodyText, Title, Enabled, ID, UserID FROM Posts WHERE Enabled = 1 AND UserID = $viewProfile ORDER BY ID DESC LIMIT $postNumStart, $postsPerPage ");
             //print_r($page);
             ?>
-
+            <h1>You are currently in <u><?=$userData[0]?>'s:</u> profile</h1>
 
             <?php
             while ($postData = $postDetails->fetch()) {
