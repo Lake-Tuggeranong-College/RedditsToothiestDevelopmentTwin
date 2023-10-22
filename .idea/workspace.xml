@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="documentation init">
-      <change afterPath="$PROJECT_DIR$/Writerside/redirection-rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/Information-for-Students.topic" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/Overview1.topic" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/frontpage.png" afterDir="false" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="updated docs">
+      <change afterPath="$PROJECT_DIR$/Writerside/cfg/buildprofiles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/student-template.topic" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Writerside/r.tree" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/r.tree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/Overview.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/redirection-rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/redirection-rules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Information-for-Students.topic" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Information-for-Students.topic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/writerside.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/writerside.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +127,7 @@
       <workItem from="1696806271423" duration="2743000" />
       <workItem from="1697757740331" duration="113000" />
       <workItem from="1698010787603" duration="12000" />
-      <workItem from="1698010806756" duration="1637000" />
+      <workItem from="1698010806756" duration="4445000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -250,7 +249,31 @@
       <option name="project" value="LOCAL" />
       <updated>1698011206101</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="screenshot">
+      <option name="closed" value="true" />
+      <created>1698012465270</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698012465270</updated>
+    </task>
+    <task id="LOCAL-00017" summary="removed">
+      <option name="closed" value="true" />
+      <created>1698012475673</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698012475673</updated>
+    </task>
+    <task id="LOCAL-00018" summary="updated docs">
+      <option name="closed" value="true" />
+      <created>1698012488024</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698012488024</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +291,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="created a testPostDisplay.php page&#10;underway" />
     <MESSAGE value="feed and post working css added still in progress" />
@@ -285,6 +309,9 @@
     <MESSAGE value="new image" />
     <MESSAGE value="index.php minor change" />
     <MESSAGE value="documentation init" />
-    <option name="LAST_COMMIT_MESSAGE" value="documentation init" />
+    <MESSAGE value="screenshot" />
+    <MESSAGE value="removed" />
+    <MESSAGE value="updated docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated docs" />
   </component>
 </project>

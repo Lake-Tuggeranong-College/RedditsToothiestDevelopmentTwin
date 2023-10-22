@@ -14,4 +14,12 @@
         <description>Created after removal of "About r2d2" from r2d2</description>
         <accepts>starter-topic.html</accepts>
     </rule>
+    <rule id="154d6d72">
+        <description>Created after removal of "Section Starting Page" from r2d2</description>
+        <accepts>Section-Starting-Page.html</accepts>
+    </rule>
+    <rule id="7fe55f6b">
+        <description>Created after removal of "Student-template" from r2d2</description>
+        <accepts>Student-template.html</accepts>
+    </rule>
 </rules>
