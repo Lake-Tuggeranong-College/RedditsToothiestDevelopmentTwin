@@ -15,3 +15,5 @@
 #PHPStorm Configuration Files
 .idea/*
 .idea/workspace.xml
+.idea/php.xml
+.idea/workspace.xml

@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="index.php minor change">
-      <change afterPath="$PROJECT_DIR$/userEditProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/c.list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/completion_procedure.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/completion_procedure_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/convert_table_to_xml.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/convert_table_to_xml_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/new_topic_options.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/images/new_topic_options_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/r.tree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/Overview.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/v.list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/writerside.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminResetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminResetPassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/communityPosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userList.php" beforeDir="false" afterPath="$PROJECT_DIR$/userList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/userProfile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="InstanceColorv3">
+    <option name="map">
+      <map>
+        <entry key="r.tree">
+          <value>
+            <ColorState>
+              <option name="customOrder" value="1" />
+              <option name="first">
+                <RgbState>
+                  <option name="blue" value="60" />
+                  <option name="darkBlue" value="60" />
+                  <option name="darkGreen" value="68" />
+                  <option name="darkRed" value="206" />
+                  <option name="green" value="61" />
+                  <option name="red" value="219" />
+                </RgbState>
+              </option>
+              <option name="second">
+                <RgbState>
+                  <option name="blue" value="66" />
+                  <option name="darkBlue" value="65" />
+                  <option name="darkGreen" value="126" />
+                  <option name="darkRed" value="231" />
+                  <option name="green" value="142" />
+                  <option name="red" value="255" />
+                </RgbState>
+              </option>
+            </ColorState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -35,6 +74,7 @@
 }</component>
   <component name="ProjectId" id="2TdLuzLMiwcDlxuSi8vWRACPCw6" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -48,13 +88,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/nate_abraham/Documents/GitHub/NJPHP2023",
+    "last_opened_file_path": "/Users/ryancather/Github/WebDev/r2d2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+    "vue.rearranger.settings.migration": "true",
+    "writerside.last.selected.productr2d2": "r"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -89,6 +130,9 @@
       <workItem from="1693962335066" duration="324000" />
       <workItem from="1694567180331" duration="2304000" />
       <workItem from="1696806271423" duration="2743000" />
+      <workItem from="1697757740331" duration="113000" />
+      <workItem from="1698010787603" duration="12000" />
+      <workItem from="1698010806756" duration="183000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
