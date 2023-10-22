@@ -6,6 +6,6 @@
                  name="r2d2"
                  start-page="starter-topic.md">
 
-    <toc-element topic="Overview.md"/>
-    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="Overview1.topic"/>
+    <toc-element topic="Information-for-Students.topic"/>
 </instance-profile>

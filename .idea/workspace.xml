@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="index.php minor change">
-      <change afterPath="$PROJECT_DIR$/Writerside/c.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/completion_procedure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/completion_procedure_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/convert_table_to_xml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/convert_table_to_xml_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/new_topic_options.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/images/new_topic_options_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/r.tree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/Overview.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/v.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/writerside.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="documentation init">
+      <change afterPath="$PROJECT_DIR$/Writerside/redirection-rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/Information-for-Students.topic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Writerside/topics/Overview1.topic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/frontpage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/r.tree" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/r.tree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/starter-topic.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +61,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="8.2.11" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -93,7 +87,8 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true",
     "writerside.last.selected.productr2d2": "r"
   },
@@ -106,6 +101,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -132,7 +128,7 @@
       <workItem from="1696806271423" duration="2743000" />
       <workItem from="1697757740331" duration="113000" />
       <workItem from="1698010787603" duration="12000" />
-      <workItem from="1698010806756" duration="183000" />
+      <workItem from="1698010806756" duration="1637000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -246,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694568154905</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="documentation init">
+      <option name="closed" value="true" />
+      <created>1698011206101</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698011206101</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +284,7 @@
     <MESSAGE value="uncommended the sidebar" />
     <MESSAGE value="new image" />
     <MESSAGE value="index.php minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="index.php minor change" />
+    <MESSAGE value="documentation init" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation init" />
   </component>
 </project>

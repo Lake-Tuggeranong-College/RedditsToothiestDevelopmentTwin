@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Information for Students" id="Information-for-Students">
+
+
+
+    <p>
+        To include a video in your XML page, use the following syntax:
+    </p>
+
+
+<chapter title="Reference" id="reference">
+    <p>To view the referecne documentation, and how to include video etc see the following site</p>
+    <p><a href="https://www.jetbrains.com/help/writerside/discover-writerside.html">Discover Writerside</a></p>
+</chapter>
+
+    <seealso>
+        <!--Provide links to related how-to guides, overviews, and tutorials.-->
+    </seealso>
+</topic>
