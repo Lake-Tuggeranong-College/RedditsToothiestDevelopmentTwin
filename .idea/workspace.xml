@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="index.php minor change">
-      <change afterPath="$PROJECT_DIR$/userEditProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminResetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminResetPassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/communityPosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityList.php" beforeDir="false" afterPath="$PROJECT_DIR$/communityList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/postUpload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userList.php" beforeDir="false" afterPath="$PROJECT_DIR$/userList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/userProfile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,28 +37,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/nate_abraham/Documents/GitHub/NJPHP2023",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nate_abraham/Documents/GitHub/jedi-Nate-jon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css" />
@@ -88,7 +84,12 @@
       <workItem from="1693786905577" duration="2087000" />
       <workItem from="1693962335066" duration="324000" />
       <workItem from="1694567180331" duration="2304000" />
-      <workItem from="1696806271423" duration="2743000" />
+      <workItem from="1696806271423" duration="6984000" />
+      <workItem from="1697411922795" duration="2327000" />
+      <workItem from="1697771205631" duration="3294000" />
+      <workItem from="1698014627171" duration="74000" />
+      <workItem from="1698014712051" duration="5178000" />
+      <workItem from="1698984520840" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="created a testPostDisplay.php page&#10;underway">
       <option name="closed" value="true" />
@@ -202,7 +203,31 @@
       <option name="project" value="LOCAL" />
       <updated>1694568154905</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="profile page link heads to user profile feed insted of heading to change the users password">
+      <option name="closed" value="true" />
+      <created>1696809214420</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696809214420</updated>
+    </task>
+    <task id="LOCAL-00016" summary="profile page now workes with pagination">
+      <option name="closed" value="true" />
+      <created>1696983160509</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696983160509</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixed the pagination and directory of communityPost page and added titles to both userProfile and ComunityPost.">
+      <option name="closed" value="true" />
+      <created>1696985158922</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696985158922</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +261,9 @@
     <MESSAGE value="uncommended the sidebar" />
     <MESSAGE value="new image" />
     <MESSAGE value="index.php minor change" />
-    <option name="LAST_COMMIT_MESSAGE" value="index.php minor change" />
+    <MESSAGE value="profile page link heads to user profile feed insted of heading to change the users password" />
+    <MESSAGE value="profile page now workes with pagination" />
+    <MESSAGE value="fixed the pagination and directory of communityPost page and added titles to both userProfile and ComunityPost." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the pagination and directory of communityPost page and added titles to both userProfile and ComunityPost." />
   </component>
 </project>
