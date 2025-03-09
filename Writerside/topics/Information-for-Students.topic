@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Information for Students" id="Information-for-Students">
+
+
+    <p>
+        To include a video in your XML page, use the following syntax:
+    </p>
+
+
+    <chapter title="Reference" id="reference">
+        <p>To view the reference documentation, and how to include video etc see the following site</p>
+        <p><a href="https://www.jetbrains.com/help/writerside/discover-writerside.html">Discover Writerside</a></p>
+    </chapter>
+
+
+
+
+    <chapter title="Assessment Details" id="assessment-details">
+        <p>Video</p>
+        Your video is to highlight the working features of your project and your understanding of how it functions.
+        Using a collection of videos, still images and audio emphasise the positive features of your project.
+        Your video should have the following sections:
+        Project Functionality - focusing on the features of the project. Demonstrate these in action.
+        Code overview - demonstration of how the code operates from a technical standpoint.
+        Data - detailing how data is stored and used in the project.
+
+        <p>Video Specifications</p>
+        <list>
+            <li>Include a title sequence, including the name of the product and your name.</li>
+            <li>Use simple Visual Effects and Transitions.</li>
+            <li>        You may use a AI generated voice for voice overs - reference this if used.
+</li>
+            <li>Include Background Music and Sound Effects. Ensure these are sourced appropriately (e.g. released under creative
+        commons)</li>
+            <li>There is no time limit</li>
+        </list>
+
+
+
+        <p>Evaluation</p>
+
+        Using the original project requirements, evaluate the final version produced. Using graphics and explanations as
+        necessary, compare various aspects of the code and project according to the original specifications.
+        Additionally, compare the final product against similar, existing available products available.
+        Use user feedback to provide evidence of your evaluation.
+
+    </chapter>
+
+       <seealso>
+        Google Classroom
+    </seealso>
+</topic>

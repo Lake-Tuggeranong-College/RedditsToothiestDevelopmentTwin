@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Project Overview" id="Overview1">
+
+    <img src="../../images/frontpage.png" alt="Project Overview" width="100%"/>
+    <p>This project is being developed by the Website Development class in Semester 2, 2023.</p>
+
+
+    <chapter title="Project Challenge" id="project-challenge">
+        <p>Students were given a challenge to produce a website as an homage to Reddit, where users can post content and
+            other users can vote on that content.</p>
+        <p>Students were developing this as a group, with each student responsible for a different part of the project.
+            Github was used to manage the project.</p>
+    </chapter>
+
+    <chapter title="Project Requirements" id="project-requirements">
+        <p>The project requirements were:</p>
+        <list>
+            <li>Plain, vanilla PHP with Bootstrap for UI</li>
+            <li>No frameworks</li>
+            <li>User Management (login, logout, register, etc.)</li>
+            <li>Posts (create, read, update, delete)</li>
+            <li>Moderation (delete posts, ban users, etc.)</li>
+        </list>
+    </chapter>
