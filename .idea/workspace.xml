@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="b05ce8c9-2628-458e-bd68-8145700a2a26" name="Changes" comment="updated docs">
       <change afterPath="$PROJECT_DIR$/Writerside/cfg/buildprofiles.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Writerside/topics/student-template.topic" afterDir="false" />
@@ -90,14 +91,15 @@
     "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true",
     "writerside.last.selected.productr2d2": "r"
+
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
@@ -274,6 +276,7 @@
       <updated>1698012488024</updated>
     </task>
     <option name="localTasksCounter" value="19" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,5 +316,6 @@
     <MESSAGE value="removed" />
     <MESSAGE value="updated docs" />
     <option name="LAST_COMMIT_MESSAGE" value="updated docs" />
+
   </component>
 </project>

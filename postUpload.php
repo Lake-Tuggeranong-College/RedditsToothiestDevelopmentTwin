@@ -50,12 +50,12 @@ if (!authorisedAccess(false, true, true)) {
                     <h1 class="text-primary">Create a Post</h1>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
                           enctype="multipart/form-data">
-                        <!--Unsure about functionality. Placeholder for community tagging dropdown-->
-                        <div class="mb-3">
-                            <!--                add an image to upload on the post-->
-                            <label for="Posts" class="form-label">Community ID*</label>
-                            <input type="number" id="Community" name="Community" class="form-control" required="true"
-                                   placeholder="example: 20. the ID of the community">
+<!--                        <!--Unsure about functionality. Placeholder for community tagging dropdown-->
+<!--                        <div class="mb-3">-->
+<!--                            <!--                add an image to upload on the post-->
+<!--                            <label for="Posts" class="form-label">Community ID*</label>-->
+<!--                            <input type="number" id="Community" name="Community" class="form-control" required="true"-->
+<!--                                   placeholder="example: 20. the ID of the community">-->
                         </div>
                         <div class="mb-3">
                             <!--                a breif about the post aka title-->
@@ -125,15 +125,15 @@ if (!authorisedAccess(false, true, true)) {
             $userID = $_SESSION['user_id'];
             $BodyText = sanitise_data($_POST['Description']);
             $Title = sanitise_data($_POST['Title']);
-            $CommunityID = sanitise_data($_POST['Community']);
+//            $CommunityID = sanitise_data($_POST['Community']);
             date_default_timezone_set('Australia/Canberra');
             $DateTime = date('Y-m-d H:i:s');
             $location = 'Working On';
             $NoImage = null;
-            $CommunityDetails = $conn->query("SELECT id, Title FROM id");
-            echo $CommunityDetails;
-            // defining what type of file is allowed
-            // We separate the file, and obtain the file extension.
+//            $CommunityDetails = $conn->query("SELECT id, Title FROM Communities");
+//            echo $CommunityDetails;
+//            // defining what type of file is allowed
+//            // We separate the file, and obtain the file extension.
 
             //$username;
             //$hashed_password;
@@ -170,6 +170,7 @@ if (!authorisedAccess(false, true, true)) {
                         if ($fileError === 0) {
                             // File is smaller than arbitrary size
                             if ($fileSize < 10000000000) {
+                                echo "all good";
                                 //file name is now a unique ID based on time with IMG- proceeding it, followed by the file type.
                                 $fileNameNew = uniqid('IMG-', True) . "." . $fileActualExtension;
                                 //upload location
